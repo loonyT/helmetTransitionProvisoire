@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>AMR decode/encode tests</title>
+	
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-2.2.4.js"></script>
+    <script src="amrwb.js" defer></script>
+    <script src="amrwb-util.js" defer></script>
+	    <script src="amrnb.js" defer></script>
+		<script src="Resampler.js" defer></script>
+		<script src="amrplayer.js" defer></script>
+		
+
+		
+</head>
+
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<template id="amrPlayer">
+<div class="FloatingSmallContainer">
+<div class="Small__Container">
+	<div class="Small__Component">
+		<div class="Small__InfoContainer">
+			<div class="Image__ImageContainer">
+				<div class="Image__Container">
+					<img src="Soundwave48x48.png" style="opacity: 1;" class="Image__ImageComponent">
+				</div>
+			</div>
+			<div class="Small__Info">
+				<div id="fileTitle" class="Small__Title"></div>
+				<!-- <div class="Small__Author">Meditation Sounds</div> -->
+			</div>
+		</div>
+		<div id="playerprogressbar" class="ProgressBar__Component isPaused">
+		
+				<div class="DefaultButton__IconComponent Play__Component" id="play-btn">
+					<svg viewBox="0 0 36 36" fill="rgb(51, 55, 61)" class="Play__Icon"><path d="M12.233 7.68l15.75 10.124c.69.443.69 1.45 0 1.892L12.233 29.82a1.125 1.125 0 0 1-1.733-.947V8.627c0-.89.985-1.428 1.733-.947z"></path></svg>
+				</div>
+				<div class="DefaultButton__IconComponent Pause__Component" id="pause-btn">
+					<svg viewBox="0 0 24 24" fill="rgb(51, 55, 61)" class="Pause__Icon"><path d="M10 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4zm8 0a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4z"></path></svg>
+				</div>
+		
+			<div style="transform: scale(1); cursor: pointer;" class="ProgressBar__Track" id="track-bar-container">
+				<div id="fader" style="position: absolute; z-index: 12; cursor: grab; user-select: none; touch-action: none; transform: translate(-1px, 1px);" tabindex="0" aria-valuemax="100" aria-valuemin="0" aria-valuenow="1.3" draggable="false" role="slider" class="ProgressBar__Thumb"></div>
+				<div class="ProgressBar__Time">
+					<div id="playback-time" class="ProgressBar__TimeStart">0:00</div>
+					<div id="song-duration" class="ProgressBar__TimeEnd">0:00</div>
+				</div>
+				<div id="track-bar-bg" color="rgb(51, 55, 61)" class="ProgressBar__FakeTrack"></div>
+				<div id="track-bar-loaded" style="width: 0px;" color="rgb(51, 55, 61)" class="ProgressBar__ProgressBarLoaded"></div>
+				<div id="track-bar" style="width: 0px;" color="#ff4734" class="ProgressBar__ProgressBarPlayed"></div>
+				<div id="trackhovertime" style="left: 0;" class="ProgressBar__HoverTime">0:00</div>
+			</div>
+			
+				<div class="VolumeProvider__VolumeControlComponent">
+					<div  id="volumeControl" class="VolumeControlSlider__VolumeControlSliderComponent">
+						<div id="volumeSlider" class="VolumeControlSlider__Inner">
+							<div  style="transform: scale(1); cursor: pointer;" class="VolumeControlSlider__Track">
+								<div id="volCursor" style="position: absolute; z-index: 0; cursor: grab; user-select: none; touch-action: none; transform: translate(-7px, -7px);" tabindex="0"  draggable="false" role="slider" class="VolumeControlSlider__Thumb">
+								</div>
+								<div id="volLevel" style="height: 100%;" class="VolumeControlSlider__VolumeLevel"></div>
+							</div>
+						</div>
+					</div>
+					<div id="volumeBtn" class="DefaultButton__IconComponent VolumeControlButton__VolumeControlButtonComponent">
+						<div class="VolumeControlIcon__Component">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="rgb(51, 55, 61)">
+							<path id="volumeIconloud" d="M63.4,71.6c-1.2,0-2.3-0.6-2.9-1.7c-0.9-1.6-0.4-3.7,1.2-4.6c5.5-3.2,8.9-9.1,8.9-15.4s-3.4-12.2-8.9-15.4 c-1.6-0.9-2.2-3-1.2-4.6c0.9-1.6,3-2.2,4.6-1.2c7.5,4.4,12.2,12.5,12.2,21.2s-4.7,16.8-12.2,21.2C64.6,71.5,64,71.6,63.4,71.6z" style="opacity: 1;"></path>
+							<path id="volumeIconmid" d="M57.1,60.7c-1.2,0-2.3-0.6-2.9-1.7c-0.9-1.6-0.4-3.7,1.2-4.6C57,53.5,58,51.8,58,50s-1-3.5-2.6-4.4 c-1.6-0.9-2.2-3-1.2-4.6c0.9-1.6,3-2.2,4.6-1.2c3.6,2.1,5.9,6,5.9,10.2s-2.3,8.1-5.9,10.2C58.2,60.5,57.7,60.7,57.1,60.7z" style="opacity: 1;"></path>
+							<polygon id="volumeIconMute" points="85,40 80,35 70,45 60,35 55,40 65,50 55,60 60,65 70,55 80,65 85,60 75,50 " style="opacity: 0;"></polygon>
+							<path d="M44.2,24.3L28.7,36.6l-0.3,0.3H11.9c-1.1,0-1.9,0.9-1.9,1.9v22.3c0,1.1,0.9,1.9,1.9,1.9h16.4l0.3,0.3l15.5,12.4 c1.3,1,3.1,0.1,3.1-1.5V25.8C47.3,24.2,45.5,23.3,44.2,24.3z"></path></svg>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+</div>
+</div>
+</template>
+
+
+
+
+<h2>Decode amr file and play</h2>
+<table>
+<tr id="sample-amr0"><td><button>Play</button></td><td><a href="audio/sample_6600.amr">sample_6600.amr</a></td></tr>
+<tr id="sample-amr1"><td><button>Play</button></td><td><a href="audio/sample_8850.amr">sample_8850.amr</a></td></tr>
+<tr id="sample-amr2"><td><button>Play</button></td><td><a href="audio/sample_12650.amr">sample_12650.amr</a></td></tr>
+<tr id="sample-amr3"><td><button>Play</button></td><td><a href="audio/sample_14250.amr">sample_14250.amr</a></td></tr>
+<tr id="sample-amr4"><td><button>Play</button></td><td><a href="audio/sample_15850.amr">sample_15850.amr</a></td></tr>
+<tr id="sample-amr5"><td><button>Play</button></td><td><a href="audio/sample_19850.amr">sample_19850.amr</a></td></tr>
+<tr id="sample-amr6"><td><button>Play</button></td><td><a href="audio/sample_23050.amr">sample_23050.amr</a></td></tr>
+<tr id="sample-amr7"><td><button>Play</button></td><td><a href="audio/sample_23850.amr">sample_23850.amr</a></td></tr>
+
+<tr id="sample-amr8"><td><button>Play</button></td><td><a href="audio/ff-16b-1c-8000hz.amr">ff-16b-1c-8000hz.amr</a></td></tr>
+<tr id="sample-amr9"><td><button>Play</button></td><td><a href="audio/gs-16b-1c-8000hz.amr">gs-16b-1c-8000hz.amr</a></td></tr>
+<tr id="sample-amr10"><td><button>Play</button></td><td><a href="audio/test.amr">test.amr</a></td></tr>
+<tr id="sample-amr11"><td><button>Play</button></td><td><a href="audio/test-1.amr">test-1.amr</a></td></tr>
+</table>
+
+<div id="receptor"></div>
+<script>
+var amrPlayerTemplate = document.getElementById("amrPlayer");
+
+function instantiatePlayer(armUri, guid, targetElementId, filename) {
+	// Create an instance of the template content
+    var instance = document.importNode(amrPlayerTemplate.content, true);
+    // Add relevant content to the template
+	instance.getElementById('fileTitle').innerHTML = filename;
+    instance.getElementById('fileTitle').id = guid+'fileTitle' ;
+    instance.getElementById('playerprogressbar').id = guid+'playerprogressbar';
+	instance.getElementById('play-btn').id = guid+'play-btn';
+	instance.getElementById('pause-btn').id = guid+'pause-btn';
+	instance.getElementById('track-bar-container').id = guid+'track-bar-container';
+	instance.getElementById('trackhovertime').id = guid+'trackhovertime';
+	instance.getElementById('fader').id = guid+'fader';
+	instance.getElementById('playback-time').id = guid+'playback-time';
+	instance.getElementById('song-duration').id = guid+'song-duration';
+	instance.getElementById('track-bar-bg').id = guid+'track-bar-bg';
+	instance.getElementById('track-bar-loaded').id = guid+'track-bar-loaded';
+	instance.getElementById('track-bar').id = guid+'track-bar';
+	instance.getElementById('volumeControl').id = guid+'volumeControl';
+	instance.getElementById('volumeSlider').id = guid+'volumeSlider';
+	instance.getElementById('volCursor').id = guid+'volCursor';
+	instance.getElementById('volLevel').id = guid+'volLevel';
+	instance.getElementById('volumeBtn').id = guid+'volumeBtn';
+	instance.getElementById('volumeIconloud').id = guid+'volumeIconloud';
+	instance.getElementById('volumeIconmid').id = guid+'volumeIconmid';
+	instance.getElementById('volumeIconMute').id = guid+'volumeIconMute';
+	
+	// Append the instance ot the DOM
+	var target = document.getElementById(targetElementId);
+    target.appendChild(instance);
+	setTimeout(function(){
+		CreateamrPlayerController(armUri, guid);
+		
+	}, 10);
+}
+
+//window.onload = main;
+    /* 
+    */
+var CreateamrPlayerController = function(armUri, guid) {
+	    // physical
+    var trackBarWidth = 0;
+    var leftPositionOfContainer = null;
+    var faderPosition = 0;
+	var trackDuration = 0;
+	var player;
+	
+	var togglePlayPause = function (){
+		player.toggle();
+		if (player.isPlaying) {
+			$("#"+guid+"playerprogressbar").removeClass("isPaused");
+			$("#"+guid+"playerprogressbar").addClass("isPlaying");
+			startInterval(faderPosition);
+		}
+		else
+		{
+			$("#"+guid+"playerprogressbar").removeClass("isPlaying");
+			$("#"+guid+"playerprogressbar").addClass("isPaused");
+			resetInterval();
+			faderPosition = convertLengthToTime($('#'+guid+'track-bar').width());
+		}
+	};
+	
+	var getLeftPositionOfContainer = function () {
+        return $('#'+guid+'track-bar-container').offset().left;
+    };
+	
+	var init = function() {
+        leftPositionOfContainer = getLeftPositionOfContainer();
+		setEventListeners();
+		var audiocontext = getAudioContext();
+		player = new AmrPlayer(armUri, function() { changeStyle($("#"+guid+"track-bar-loaded"), 'width', '100%'); setTrackDuration(); trackBarWidth = getTrackBarWidth(); }, function(evt) { var percentComplete = (evt.loaded / evt.total) * 100; changeStyle($("#"+guid+"track-bar-loaded"), 'width', percentComplete + "%");}, audiocontext);
+		player.endedWith( function(){ 
+			$("#"+guid+"playerprogressbar").removeClass("isPlaying");
+			$("#"+guid+"playerprogressbar").addClass("isPaused");
+			resetInterval();
+			faderPosition = 0;
+		} );        
+	};
+		
+	var setEventListeners = function () {
+        $('#'+guid+'play-btn').on('click', togglePlayPause);
+		$('#'+guid+'pause-btn').on('click', togglePlayPause);
+        $('#'+guid+'track-bar-container').on('click', faderMoveByClick);
+		$('#'+guid+'track-bar-container').mouseenter( mouseenterTrackbar );
+		$('#'+guid+'track-bar-container').mouseleave( mouseleaveTrackbar );
+		$('#'+guid+'volumeSlider').on('click', changeVolume);
+		$('#'+guid+'volumeBtn').mouseenter(mousehoverVolume);
+        //$('#track-bar-container').on('mousedown', '#fader', setFaderDrag);
+    };
+	
+	var getTrackBarWidth =  function () {
+		//alert($('#track-bar-container').width());
+        return $('#'+guid+'track-bar-bg').width();
+    };
+	
+	var mouseenterTrackbar = function (event) {
+		mousehoverTrackbar(event);
+		$('#'+guid+'track-bar-container').mousemove(mousehoverTrackbar);
+	};
+	
+	var mouseleaveTrackbar = function () {
+		$('#'+guid+'track-bar-container').off("mousemove");
+	};
+	
+	var mousehoverTrackbar = function(event){
+		var cursorX =  getCursorPos(event);
+		changeStyle($('#'+guid+'trackhovertime'), 'left', cursorX);
+        var playbackTime = convertLengthToTime(cursorX);
+        var htmlOfTime = convertPlaybackTime(playbackTime);
+        $('#'+guid+'trackhovertime').html(htmlOfTime);
+	};
+	
+	var mousehoverVolume = function (event) {
+		
+		changeStyle($('#'+guid+'volumeControl'), 'opacity', '1');
+		$('#'+guid+'volumeControl').mouseenter(function() { $('#'+guid+'volumeControl').mouseleave(function() { changeStyle($('#'+guid+'volumeControl'), 'opacity', '0');}); });
+	};
+	
+	var changeVolume = function (event)
+	{
+		console.log("changeVolume");
+		var cursorY =  getCursorPosY(event);
+			        
+        // view >> fader, progress-bar
+        changeStyle($('#'+guid+'volCursor'), 'top', cursorY);
+		
+		var volsliderhiehgt = 100 * ($('#'+guid+'volumeSlider').height() - cursorY) / $('#'+guid+'volumeSlider').height();
+		
+		if (volsliderhiehgt > 100)
+			volsliderhiehgt = 100;
+		if (volsliderhiehgt < 0)
+			volsliderhiehgt = 0;
+		
+        changeStyle($('#'+guid+'volLevel'), 'height', volsliderhiehgt + "%" );
+		
+		var volumelevel = (1 - (cursorY / $('#'+guid+'volumeSlider').height()));
+		if (volumelevel <= 0)
+		{
+			volumelevel = 0;
+			changeStyle($('#'+guid+'volumeIconloud'), 'opacity', '0');
+			changeStyle($('#'+guid+'volumeIconmid'), 'opacity', '0');
+			changeStyle($('#'+guid+'volumeIconMute'), 'opacity', '1');
+		}
+		else
+		{
+			if (volumelevel > 1)
+			{
+				volumelevel = 1;
+			}
+			changeStyle($('#'+guid+'volumeIconMute'), 'opacity', '0');
+			changeStyle($('#'+guid+'volumeIconmid'), 'opacity', '1');
+			if (volumelevel > 0.6)
+			{
+				changeStyle($('#'+guid+'volumeIconloud'), 'opacity', '1');
+			}
+			else
+			{
+				changeStyle($('#'+guid+'volumeIconloud'), 'opacity', '0');
+			}
+		}
+		
+		player.setVolume(volumelevel);
+		//console.log(volumelevel);
+	};
+	
+	var faderMoveByClick = function (event) {
+        // change positions of progressbar
+        var cursorX =  getCursorPos(event);
+        changeStyle($('#'+guid+'fader'), 'left', cursorX);
+        changeStyle($('#'+guid+'track-bar'), 'width', cursorX);
+
+        // playbackTime changed
+        isplaybackTimeChanged = true;
+        var newplaybackTime = convertLengthToTime(cursorX);
+		faderPosition = newplaybackTime;
+		if (player.isPlaying)
+		{
+			clearInterval(progressTimer);
+			startInterval(faderPosition);
+		}
+		player.playAtOffset(newplaybackTime);
+		
+    };
+	
+	var getCursorPos = function (event) {
+        var cursorX = event.pageX;
+        return cursorX - leftPositionOfContainer;
+    };
+	
+	var getCursorPosY = function (event) {
+        var cursorY = event.pageY;
+		if (cursorY > getTopPositionOfVolumeSlider() + $('#'+guid+'volumeSlider').height())
+			cursorY = getTopPositionOfVolumeSlider() + $('#'+guid+'volumeSlider').height();
+        return cursorY - getTopPositionOfVolumeSlider();
+    };
+	
+	var getTopPositionOfVolumeSlider = function () {
+        return $('#'+guid+'volumeSlider').offset().top;
+    };
+
+    	
+	var setFaderMoveController =  function (event) {
+        // cursor position
+        var faderPosX = getCursorPos(event);
+        
+        // view >> fader, progress-bar
+        changeStyle($('#'+guid+'fader'), 'left', faderPosX);
+        changeStyle($('#'+guid+'track-bar'), 'width', faderPosX);
+
+        // view >> playback time
+        var playbackTime = convertLengthToTime(faderPosX);
+        var htmlOfTime = convertPlaybackTime(playbackTime);
+        displayPlaybackTime($('#'+guid+'playback-time'), htmlOfTime);
+
+    };
+
+    var checkCursor = function (event) {
+        // absolute positions of cursor
+        var posX = event.pageX;
+        var posY = event.pageY;
+
+        /* 
+        container parameters：width height top left
+        judge whether cursor is outside or inside the container
+        */
+        var $target = $('#'+guid+'track-bar-container');
+        var targetTop = $target.offset().top;
+        var targetLeft = $target.offset().left;
+        var targetWidth = trackBarWidth;
+        var targetHeight = $target.outerHeight();
+
+        if (targetLeft <= posX && targetLeft + targetWidth &&
+            targetTop <= posY && posY <= targetTop + targetHeight) {
+            console.log('inside man');
+            return true;
+        } else {
+            console.log('outside lady');
+            return false;
+        }
+    };
+
+    // display the track duration
+    var setTrackDuration = function () {
+		trackDuration = player.duration();
+        var html = convertPlaybackTime(trackDuration);
+        displayPlaybackTime($('#'+guid+'song-duration'), html);
+		trackBarWidth = getTrackBarWidth();
+    };
+	
+	var displayPlaybackTime = function (aDom, aPlaybackTimeHtml) {
+        aDom.html(aPlaybackTimeHtml);
+    };
+	
+	var resetInterval = function () {
+        clearInterval(progressTimer);
+    };
+	
+	var startInterval = function (playbackTime) {
+        var $fader = $('#'+guid+'fader');
+        var $progressBar = $('#'+guid+'track-bar');
+
+        var $playback = $('#'+guid+'playback-time');
+
+        progressTimer = setInterval(function() {
+			//aPlaybackTime = player.getCurrentTime();
+			
+			
+            // playbackTime(seconds) >> (pixels)
+            var length = convertTimeToLength(playbackTime);
+            
+			//console.log("aPlaybackTime: "+playbackTime + ", length: " + length);
+			
+            // view >> progress bar
+            changeStyle($fader, 'left', length);
+            changeStyle($progressBar, 'width', length);
+
+            // view >> playback time
+            var playbackTimeHtml = convertPlaybackTime(playbackTime);
+            displayPlaybackTime($playback, playbackTimeHtml);
+
+            // 0.03 is equal to 30 milliseonds 
+            playbackTime += 0.03;
+
+            // if aplayback time surpass duration, clear interval
+            if (playbackTime >= trackDuration) {
+                resetInterval();
+            }
+        }, 30);
+    };
+	
+
+	
+	var changeStyle = function (aDom, aProperty, aValue) {
+        aDom.css(aProperty, aValue);
+    };
+
+	var convertPlaybackTime = function (aPlaybackTime) {
+        // convert | ex) playbackTime = 360.3452 |
+        var minutes = Math.floor(aPlaybackTime/60);
+        var seconds = Math.floor(aPlaybackTime%60);
+
+        // just for layout ex) 7 >> 07
+        seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+        return minutes + ':' + seconds;
+    };
+
+    var convertLengthToTime = function (aLength) {
+        return trackDuration * ( aLength/trackBarWidth );
+    };
+
+    var convertTimeToLength = function (aPlaybackTime) {
+        return aPlaybackTime / trackDuration * trackBarWidth;
+    };
+	
+	init();
+}
+
+
+	
+
+    function E(selector) {
+        return document.querySelector(selector);
+    }
+
+	function makeid(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+	
+	
+    for (var i=0; i < 12; i++) {
+        var buttonSelector = '#sample-amr' + i + ' > td > button';
+
+			
+        E(buttonSelector).onclick = function() {
+			//var audiocontext = getAudioContext();
+			var guid = makeid(6);
+			instantiatePlayer(this.parentNode.parentNode.children[1].children[0].href, guid, 'receptor', this.parentNode.parentNode.children[1].children[0].innerHTML);
+			
+			//var player = new AmrPlayer(this.parentNode.parentNode.children[1].children[0].href, function() { player.play(); }, null, audiocontext);
+			//setTimeout(function() { player.play(); }, 1000);
+            /*var href = this.parentNode.parentNode.children[1].children[0].href;
+            fetchBlob(href, function(blob) {
+                playAmrBlob(blob);
+            });*/
+			
+
+
+        };
+    }
+
+    var gAudioContext ;
+	
+	var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+               navigator.userAgent &&
+               navigator.userAgent.indexOf('CriOS') == -1 &&
+               navigator.userAgent.indexOf('FxiOS') == -1;
+
+    function getAudioContext() {
+        if (!gAudioContext) {
+            gAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+			gAudioContext.onstatechange = function() {console.log("AudioContext state: "+gAudioContext.state);}
+        }
+		
+		console.log("AudioContext state: "+gAudioContext.state); //suspended
+			gAudioContext.resume();
+			
+		
+        return gAudioContext;
+    }
+
+    function fetchBlob(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.responseType = 'blob';
+        xhr.onload = function() {
+            callback(this.response);
+        };
+        xhr.onerror = function() {
+            alert('Failed to fetch ' + url);
+        };
+        xhr.send();
+    }
+
+    function readBlob(blob, callback) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var data = new Uint8Array(e.target.result);
+            callback(data);
+        };
+        reader.readAsArrayBuffer(blob);
+    }
+
+    function playAmrBlob(blob, callback) {
+        readBlob(blob, function(data) {
+            playAmrArray(data);
+        });
+    }
+
+	var AMR_HEADER = "#!AMR-WB\n";
+	function checkAMRWBFormat(amr)
+	{
+	    // Check file header.
+        if (String.fromCharCode.apply(null, amr.subarray(0, this.AMR_HEADER.length)) !== this.AMR_HEADER) {
+            return false;
+        }
+		return true;
+	}
+	
+	
+    function playAmrArray(array) {
+        if (checkAMRWBFormat(array))
+		{
+			AMRWB.decodeInit();
+			var samples = AMRWB.decode(array);
+			AMRWB.decodeExit();
+			if (!samples) {
+				alert('Failed to decode!');
+				return;
+			}
+			play16bPcm(samples);
+		}
+		else
+		{
+			var samples = AMR.decode(array);
+			if (!samples) {
+				alert('Failed to decode!');
+				return;
+			}
+			play8bPcm(samples);
+		}
+    }
+
+    function play16bPcm(samples) {
+        var ctx = getAudioContext();    
+		console.log(ctx);
+        var src = ctx.createBufferSource();
+		
+		var gainNode = ctx.createGain();
+		gainNode.gain.value = 0.99; // setting it to 99%
+		gainNode.connect(ctx.destination);
+		
+		if (isSafari)
+		{
+			var resampler = new Resampler(16000, 44100, 1, samples.length)
+			var resampledData = resampler.resample(samples);
+			var buffer = ctx.createBuffer(1, resampledData.length, 44100);
+			if (buffer.copyToChannel) {
+				buffer.copyToChannel(resampledData, 0, 0);
+				src.buffer = buffer;
+			} else {
+				//var channelBuffer = buffer.getChannelData(0);
+				console.log('buffer ChannelData length before setting: '+buffer.getChannelData(0).length);
+				buffer.getChannelData(0).set(resampledData);
+				console.log('buffer ChannelData length after setting: '+buffer.getChannelData(0).length);
+				src.buffer = buffer;
+			}
+			src.connect(gainNode);
+			//src.connect(ctx.destination);
+		}
+		else
+		{
+			var buffer = ctx.createBuffer(1, samples.length, 16000);
+			if (buffer.copyToChannel) {
+				buffer.copyToChannel(samples, 0, 0)
+			} else {
+				var channelBuffer = buffer.getChannelData(0);
+				channelBuffer.set(samples);
+			}
+			src.buffer = buffer;
+			src.connect(ctx.destination);
+		}
+		
+		src.onended = function(){
+            console.log("read 16khz ended");
+        };
+		
+        src.start();
+		console.log(ctx);
+    }
+	
+	function play8bPcm(samples) {
+        var ctx = getAudioContext();
+        var src = ctx.createBufferSource();
+		if (isSafari)
+		{
+			var resampler = new Resampler(8000, 44100, 1, samples.length)
+			var resampledData = resampler.resample(samples);
+			var buffer = ctx.createBuffer(1, resampledData.length, 44100);
+			if (buffer.copyToChannel) {
+				buffer.copyToChannel(resampledData, 0, 0);
+				src.buffer = buffer;
+			} else {
+				//var channelBuffer = buffer.getChannelData(0);
+				buffer.getChannelData(0).set(resampledData);
+				src.buffer = buffer;
+			}
+			
+			src.connect(ctx.destination);
+		}
+		else
+		{
+        var buffer = ctx.createBuffer(1, samples.length, 8000);
+        if (buffer.copyToChannel) {
+            buffer.copyToChannel(samples, 0, 0)
+        } else {
+            var channelBuffer = buffer.getChannelData(0);
+            channelBuffer.set(samples);
+        }
+
+        src.buffer = buffer;
+        src.connect(ctx.destination);
+		}
+		src.onended = function(){
+            console.log("read 8khz ended");
+        };
+        src.start();
+    }
+	
+	
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+body {
+    font: 400 normal 15px/1.3 -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
+}
+
+
+.FloatingSmallContainer {
+    /* position: fixed; */
+    max-width: 320px;
+    width: calc(100% - 24px);
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    bottom: 12px;
+    right: 12px;
+    color: rgb(51, 55, 61);
+    z-index: 999999999;
+    border-radius: 8px;
+}
+
+.Small__Container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0px;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.69);
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.Small__Container {
+    border-radius: 8px;
+    width: 100%;
+    /* background-image: url("https://files.elfsight.com/storage/f7e9a9de-578a-404d-9755-29717c16030a/908956dd-c9b0-4ce0-bf0c-912856c46098.jpeg"); */
+    background-position: center center;
+    background-size: cover;
+	position:relative;
+	background: #e8e8e8;
+}
+
+.Small__Component {
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.Small__InfoContainer {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    z-index: 1;
+}
+
+.Image__ImageContainer {
+    width: 48px;
+    height: 24px;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-right: 12px;
+}
+
+.Image__Container::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    inset: 0px;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    border-radius: inherit;
+}
+
+.Image__Container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.Image__ImageComponent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    object-fit: cover;
+    user-select: none;
+}
+
+.Small__Info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.Small__Title {
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: bold;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -moz-box-orient: vertical;
+}
+
+.Small__Author {
+    font-size: 13px;
+    line-height: 1.2;
+    margin-top: 2px;
+    opacity: 0.7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ProgressBar__Component {
+    height: 26px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    z-index: 1;
+    position: relative;
+    width: 100%;
+}
+
+.ProgressBar__Component .ProgressBar__Track {
+    display: flex;
+    align-items: flex-end;
+}
+.ProgressBar__Track {
+    height: 26px;
+    padding: 6px 0px;
+    width: 100%;
+    border-radius: 2px;
+    margin-top: -4px;
+    box-sizing: border-box;
+	margin-left: 5px;
+}
+
+.ProgressBar__Thumb {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    background-color: #3fa9f5; /* rgb(255, 71, 52); */
+    top: 11px;
+    z-index: 12;
+    transition: opacity 0.2s ease 0s;
+}
+
+.ProgressBar__Time {
+    top: -6px;
+    transition: all 0.3s ease 0s;
+    pointer-events: none;
+    width: 100%;
+    height: 12px;
+    line-height: 12px;
+    z-index: 5;
+    font-size: 11px;
+    opacity: 0.7;
+    position: relative;
+    top: -4px;
+}
+
+.ProgressBar__TimeStart {
+    position: absolute;
+    left: 0px;
+    pointer-events: none;
+}
+
+.ProgressBar__TimeEnd {
+    position: absolute;
+    right: 0px;
+    pointer-events: none;
+}
+
+.ProgressBar__FakeTrack {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    background-color: rgba(51, 55, 61, 0.2);
+    z-index: 3;
+    pointer-events: none;
+    border-radius: 4px;
+    height: 4px;
+    bottom: 6px;
+}
+
+.ProgressBar__ProgressBarLoaded {
+    position: absolute;
+    height: 4px;
+    left: 0px;
+    background-color: white; /* rgba(51, 55, 61, 0.2); */
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 4px;
+    transition: all 0.1s ease 0s;
+    bottom: 6px;
+}
+
+.ProgressBar__ProgressBarPlayed {
+    position: absolute;
+    left: 0px;
+    background-color: #3fa9f5;/* rgb(255, 71, 52); */
+    z-index: 3;
+    pointer-events: none;
+    border-radius: 4px;
+    height: 4px;
+    transition: all 0.1s ease 0s;
+    bottom: 6px;
+}
+
+.Small__Controls {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0px;
+    z-index: 1;
+}
+
+.Small__ControlsMain {
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.DefaultButton__IconComponent::before {
+    width: 36px;
+    height: 36px;
+    width: 32px;
+    height: 32px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: all 0.3s ease 0s;
+    opacity: 0;
+}
+
+.DefaultButton__IconComponent {
+    width: 36px !important;
+    height: 36px !important;
+    flex-basis: 36px;
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+        flex-basis: 24px;
+    cursor: pointer;
+    position: relative;
+    /* margin-left: 16px; */
+}
+
+.Small__ControlsSecond {
+    right: 16px;
+    display: flex;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.VolumeProvider__VolumeControlComponent {
+    margin-left: 5px;
+    position: relative;
+    display: inline-flex;
+	width: 24px;
+}
+
+.VolumeControlSlider__VolumeControlSliderComponent {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    z-index: 5;
+    position: absolute;
+    /* right: 0px; */
+    top: auto;
+    bottom: 100%;
+}
+
+.VolumeControlSlider__Inner {
+    width: 24px;
+    height: 120px;
+    right: 0px;
+    top: 100%;
+    box-shadow: rgba(17, 17, 17, 0.2) 0px 5px 8px 0px;
+    border-radius: 4px;
+    /* margin: 12px 0px; */
+    padding: 12px 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.VolumeControlSlider__Track {
+    height: 100%;
+    width: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: relative;
+    margin: 0px auto;
+    border-radius: 4px;
+}
+
+.VolumeControlSlider__Thumb {
+    height: 18px;
+    width: 18px;
+    z-index: 4;
+    border-radius: 50%;
+    transition: all 0.1s ease 0s;
+    background-color: #3fa9f5;/* rgb(255, 71, 52); */
+}
+
+.VolumeControlSlider__VolumeLevel {
+    position: absolute;
+    left: 0px;
+    z-index: 3;
+    pointer-events: none;
+    width: 100%;
+    bottom: 0px;
+    border-radius: 0px 0px 4px 4px;
+    background-color: #3fa9f5; /* rgb(255, 71, 52); */
+}
+
+.VolumeControlButton__VolumeControlButtonComponent::before {
+    width: 32px;
+    height: 32px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: all 0.3s ease 0s;
+    opacity: 0;
+}
+
+.VolumeControlButton__VolumeControlButtonComponent {
+    margin-left: 0px;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    cursor: pointer;
+    position: relative;
+    /* margin-left: 16px; */
+}
+
+.VolumeControlIcon__Component svg {
+    display: flex;
+}
+
+.Play__Icon {
+    transition: all 0.1s ease 0s;
+}
+
+.ProgressBar__Track:hover .ProgressBar__HoverTime,  .ProgressBar__Track:hover .ProgressBar__Thumb {
+    opacity: 1;
+}
+
+.VolumeProvider__VolumeControlComponent:hover .VolumeControlSlider__VolumeControlSliderComponent {
+    opacity: 1;
+}
+
+.VolumeControlSlider__VolumeControlSliderComponent:hover {
+	opacity: 1;
+}
+
+.ProgressBar__HoverTime {
+	margin-top: 0px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: translate(-50%, -100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+    border-radius: 4px;
+    box-shadow: rgba(17, 17, 17, 0.2) 0px 5px 8px 0px;
+    background-color: rgb(40, 40, 40);
+    color: rgb(255, 255, 255);
+    margin-top: 8px;
+    padding: 2px 9px 3px;
+    font-size: 11px;
+    text-align: center;
+    z-index: 10;
+}
+
+.isPlaying .Play__Component {
+	display: none;
+}
+
+.isPaused .Play__Component {
+	display: block;
+}
+
+.isPlaying .Pause__Component {
+	display: block;
+}
+
+.isPaused .Pause__Component {
+	display: none;
+}

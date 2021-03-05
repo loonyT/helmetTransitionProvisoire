@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55655284-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-55655284-1');
+  </script>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="author" content="Express-Desk Solution">
+  <meta name="description" content="">
+  <meta name="keywords"
+    content="Réseaux en transition, Helmet, Schaerbeeck, Helmet en transition">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title -->
+  <title>Helmet en transition</title>
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+  <!-- Plugin-CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- Main-Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>    <![endif]-->
+      <!--  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+</head>
+
+<body data-spy="scroll" data-target="#primary-menu">
+  <!-- -->
+  <div class="preloader">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+  <!-- -->
+  <div class="modal fade-scale" tabindex="-1" role="dialog" id="expressAgentDetails">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header"> 
+        </div>
+        <div class="modal-body">
+          <p> Upon starting a <em>chat conversation</em> with this contact, a
+            configurable workflow drive the behavior of ExpressAgent.
+            <em>ExpressAgent</em> can ask questions, supports Natural Language
+            Understanding through 3rd parties integrations, and can transfer
+            conversations to service desk agents when needed. <br>
+            <br>
+            ExpressAgent integrates to your <em>ticketing system</em> to retrieve
+            information about users, existing tickets and so on. It can even
+            create or update tickets if needed.
+          </p>
+          <p>ExpressAgent can be interfaced with many 3rd party APIs (Google
+            translate, Systran translator, Google DialogFlow,…) to provide
+            advanced features such as automatic real-time translation and
+            Natural Language Processing.</p>
+          <p>ExpressAgent provides advanced queuing mechanisms that can be
+            controlled from the other modules.<br>
+            <br>
+          </p>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="termsConditions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Terms and conditions</h5>
+        </div>
+        <div class="modal-body1">
+          <p><b>AGREEMENT BETWEEN USER AND Express-Desk Solution SPRL</b></p>
+
+          <p>The Express-Desk Web Site is comprised of various Web pages operated by Express-Desk .</p>
+
+          <p>The Express-Desk Web Site is offered to you conditioned on your acceptance without modification of
+            the terms, conditions, and notices contained herein. Your use of the Express-Desk Web Site
+            constitutes your agreement to all such terms, conditions, and notices.</p>
+
+          <p><b>DEFINITIONS</b></p>
+
+          <p>As used in this agreement, the following terms shall have the following meaning :
+
+            Express-Desk website refers to the present website, owned and operated by Express-Desk Solution SPRL, a
+            limited liability company incorporated under the laws of Belgium. Under the <b>registration number :
+              0649.418.760</b></p>
+
+          <p>“Affiliates” means any person or entity directly or indirectly Controlling, Controlled by, or under common
+            Control
+            with a party, where “Control” means the legal power to direct or cause the direction of the general
+            management of the
+            company, partnership, or other legal entity. Affiliates of Customer are “Customer Affiliates”,and Affiliates
+            of
+            Express-Desk are “Express-desk Affiliates”</p>
+
+          <p>"Ancillary Software" means software licensed by Express-Desk to Customer that is
+            deployed on machines operated by or for Customer to facilitate operation of the Subscription Service or
+            interoperation
+            of the Subscription Service with other software, hardware, or services. Ancillary Software may include code
+            that is
+            licensed under third-party license agreements, including open source made available or provided with the
+            Ancillary
+            Software.
+          </p>
+
+          <p>“Claim” means any third-party suit, claim, action, or demand</p>
+
+          <p>“Confidential Information” means:
+            (a)Express-Desk Core Technology (which is Confidential Information of Express-Desk); (b)Customer Data and
+            Customer
+            Technology (which is Confidential Information of Customer);(c)any information of a party that is disclosed
+            in writing or
+            orally and is designated as Confidentialor Proprietaryat time of disclosure (and, for oral disclosures,
+            summarized in
+            writing within 30 days of initial disclosure and delivered in written summary form to the receiving party),
+            or that, due
+            to the nature of the information or circumstances of disclosure, receiving party would understand it to be
+            disclosing
+            party’s confidential information; and (d)the specific terms of this Agreement, any Order Form, any SOW, and
+            any
+            amendment or attachment to any of these, between the parties (which will be deemed Confidential Information
+            of both
+            parties). Confidential Information excludes any information that: (i)is or becomes generally known to the
+            public through
+            no fault or breach of this Agreement by receiving party; (ii)was already rightfully in receiving party’s
+            possession,
+            without restriction on use or disclosure, when receiving party received it under this Agreement; (iii)is
+            independently
+            developed by receiving party without use of disclosing party’s Confidential Information; or (iv)was or is
+            rightfully
+            obtained by receiving party, without restriction on use or disclosure, from a third party not under a duty
+            of
+            confidentiality to disclosing party.</p>
+
+          <p>“Customer Data” means electronic data uploaded by or for Customer or Customer’s
+            agents, employees, or contractors, and processed in the Subscription Service, excluding Express-Desk Core
+            Technology.</p>
+
+          <p>“Customer Technology” means software, methodologies, templates, business processes, documentation, or
+            other material originally authored, invented, or otherwise created by Customer (or on Customer’s behalf,
+            other than by
+            ServiceNow or at ServiceNow’s direction) for use with the Subscription Service, excluding Express-Desk Core
+            Technology.</p>
+
+          <p>“Deliverable” means anything that is created by or on behalf of Express-Desk for Customer in the
+            performance
+            of Professional Services.</p>
+
+          <p>“Documentation” means the then-current Express-Desk product documentation relating to the
+            operation and use of the Subscription Service or Ancillary Software published by Express-Desk at
+            http://express-desk.com/. Documentation includes technical program or interface
+            documentation, user manuals, operating instructions, and release notes.1.9</p>
+
+          <p>“Intellectual Property Rights” means all
+            intellectual property or other proprietary rights worldwide, including patents, copyrights, trademarks,
+            moral rights,
+            trade secrets, and any other intellectual or industrial property, including registrations, applications,
+            renewals, and
+            extensions of such rights.</p>
+
+          <p>“Law” means anyapplicable law, rule, statute, decree, decision, order, regulation,
+            judgment, code, and requirement of any government authority (federal, state, local, or international) having
+            jurisdiction.</p>
+
+          <p>“Newly Created IP” means Intellectual Property Rights in the inventionsor works of authorship that are
+            made by Express-Desk specifically for Customer in the course of performing Professional Services for
+            Customer that are
+            expressly identified as “Newly Created IP” in an SOW, excluding Express-Desk Core Technology.</p>
+
+          <p>“Order Form” means an
+            ordering document signed by Customer and Express-Desk.</p>
+
+          <p>“Product Overview” means Express-Desk published description of
+            its products and their functionalities, solely to the extent attached to or expressly referenced in an Order
+            Form.</p>
+
+          <p>“Professional Services” means any consulting,development, or educationalservices provided by or on behalf
+            of
+            Express-Desk pursuant to an agreed SOW or Service Description.</p>
+
+          <p>“Service Description” means the
+            written description for a packaged Professional Service, attached to or referenced in an Order Form.</p>
+
+          <p>“Express-desk Core
+            Technology” means: (a)the Subscription Service, Ancillary Software, Documentation, and technology and
+            methodologies
+            (including products, software tools, hardware designs, algorithms, templates, software (in source and object
+            forms),
+            architecture, class libraries, objects, and documentation) created by or for, or licensed to, Express-Desk;
+            and
+            (b)updates, upgrades, improvements, configurations, extensions, and derivative works of the foregoing and
+            related
+            technical or end user documentation or manuals.</p>
+
+          <p>“Express-desk Products” means, collectively, the Subscription Service,
+            Ancillary Software, Documentation, and Deliverables.</p>
+
+          <p>“SOW” means a statement of work that describes
+            scoped Professional Services.</p>
+
+          <p>“Subscription Service” means the Express-Desk software-as-a-service offering ordered by
+            Customer under an Order Form.</p>
+
+          <p>“Subscription Term” means the periodof authorized access to and use of the Subscription
+            Service, as set forth in an Order Form</p>
+
+
+          <br>
+
+          <p><b>MODIFICATION OF THESE TERMS OF USE</b></p>
+
+          <p>Express-Desk reserves the right to change the terms, conditions, and notices under which the
+            Express-Desk
+            Web Site is offered, including but not limited to the charges associated with the use of the
+            Express-Desk Web Site.</p>
+
+          <p><b>LINKS TO THIRD PARTY SITES</b></p>
+
+          <p>The Express-Desk Web Site may contain links to other Web Sites ("Linked Sites"). The Linked Sites
+            are not under
+            the control of Express-Desk and Express-Desk is not responsible for the contents of any
+            Linked Site,
+            including without limitation any link contained in a Linked Site, or any changes or updates to a Linked
+            Site.
+            Express-Desk is not responsible for webcasting or any other form of transmission received from any
+            Linked Site.
+            Express-Desk is providing these links to you only as a convenience, and the inclusion of any link
+            does not imply
+            endorsement by Express-Desk of the site or any association with its operators.</p>
+
+          <p><b>NO UNLAWFUL OR PROHIBITED USE</b></p>
+
+          <p>As a condition of your use of the Express-Desk Web Site, you warrant to Express-Desk that
+            you will not use the Express-Desk Web Site for any purpose that is unlawful or prohibited by these
+            terms, conditions, and notices. You may not use the Express-Desk Web Site in any manner which could
+            damage, disable, overburden, or impair the Express-Desk Web Site or interfere with any other party's
+            use and enjoyment of the Express-Desk Web Site. You may not obtain or attempt to obtain any
+            materials or information through any means not intentionally made available or provided for through the
+            Express-Desk Web Sites.
+          </p>
+
+          <p><b>USE OF COMMUNICATION SERVICES</b>
+          </p>
+
+          <p>The Express-Desk Web Site may contain bulletin board services, chat areas, news groups, forums,
+            communities, personal web pages, calendars, and/or other message or communication facilities designed to
+            enable you to communicate with the public at large or with a group (collectively, "Communication Services"),
+            you agree to use the Communication Services only to post, send and receive messages and material that are
+            proper and related to the particular Communication Service. By way of example, and not as a limitation, you
+            agree that when using a Communication Service, you will not:
+          </p>
+
+          <p>Defame, abuse, harass, stalk, threaten or otherwise violate the legal rights (such as rights of privacy and
+            publicity) of others.
+            Publish, post, upload, distribute or disseminate any inappropriate, profane, defamatory, infringing,
+            obscene, indecent or unlawful topic, name, material or information.
+            Upload files that contain software or other material protected by intellectual property laws (or by rights
+            of privacy of publicity) unless you own or control the rights thereto or have received all necessary
+            consents.
+            Upload files that contain viruses, corrupted files, or any other similar software or programs that may
+            damage the operation of another's computer.
+            Advertise or offer to sell or buy any goods or services for any business purpose, unless such Communication
+            Service specifically allows such messages.
+            Conduct or forward surveys, contests, pyramid schemes or chain letters.
+            Download any file posted by another user of a Communication Service that you know, or reasonably should
+            know, cannot be legally distributed in such manner.
+            Falsify or delete any author attributions, legal or other proper notices or proprietary designations or
+            labels of the origin or source of software or other material contained in a file that is uploaded.
+            Restrict or inhibit any other user from using and enjoying the Communication Services.
+            Violate any code of conduct or other guidelines which may be applicable for any particular Communication
+            Service.
+            Harvest or otherwise collect information about others, including e-mail addresses, without their consent.
+            Violate any applicable laws or regulations.</p>
+
+          <p>Express-Desk has no obligation to monitor the Communication Services. However, Express-Desk
+            reserves the right to review materials posted to a Communication Service and to remove any materials in its
+            sole discretion. Express-Desk reserves the right to terminate your access to any or all of the
+            Communication Services at any time without notice for any reason whatsoever.
+
+            Express-Desk reserves the right at all times to disclose any information as necessary to satisfy any
+            applicable law, regulation, legal process or governmental request, or to edit, refuse to post or to remove
+            any information or materials, in whole or in part, in Express-Desk 's sole discretion.
+
+            Always use caution when giving out any personally identifying information about yourself or your children in
+            any Communication Service. Express-Desk does not control or endorse the content, messages or
+            information found in any Communication Service and, therefore, Express-Desk specifically disclaims
+            any liability with regard to the Communication Services and any actions resulting from your participation in
+            any Communication Service. Managers and hosts are not authorized Express-Desk spokespersons, and
+            their views do not necessarily reflect those of Express-Desk .
+
+            Materials uploaded to a Communication Service may be subject to posted limitations on usage, reproduction
+            and/or dissemination. You are responsible for adhering to such limitations if you download the materials.
+
+            MATERIALS PROVIDED TO Express-Desk OR POSTED AT ANY Express-Desk WEB SITE
+
+            Express-Desk does not claim ownership of the materials you provide to Express-Desk
+            (including feedback and suggestions) or post, upload, input or submit to any Express-Desk Web Site
+            or its associated services (collectively "Submissions"). However, by posting, uploading, inputting,
+            providing or submitting your Submission you are granting Express-Desk , its affiliated companies and
+            necessary sublicensees permission to use your Submission in connection with the operation of their Internet
+            businesses including, without limitation, the rights to: copy, distribute, transmit, publicly display,
+            publicly perform, reproduce, edit, translate and reformat your Submission; and to publish your name in
+            connection with your Submission.
+
+            No compensation will be paid with respect to the use of your Submission, as provided herein. Express-Desk
+            is under no obligation to post or use any Submission you may provide and may remove any Submission
+            at any time in Express-Desk 's sole discretion.
+
+            By posting, uploading, inputting, providing or submitting your Submission you warrant and represent that you
+            own or otherwise control all of the rights to your Submission as described in this section including,
+            without limitation, all the rights necessary for you to provide, post, upload, input or submit the
+            Submissions.</p>
+
+
+          <p><b>LIABILITY DISCLAIMER</b>
+          </p>
+
+          <p>THE INFORMATION, SOFTWARE, PRODUCTS, AND SERVICES INCLUDED IN OR AVAILABLE THROUGH THE Express-Desk
+            WEB SITE MAY INCLUDE INACCURACIES OR TYPOGRAPHICAL ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION
+            HEREIN. Express-Desk AND/OR ITS SUPPLIERS MAY MAKE IMPROVEMENTS AND/OR CHANGES IN THE Express-Desk
+            WEB SITE AT ANY TIME. ADVICE RECEIVED VIA THE Express-Desk WEB SITE SHOULD NOT BE RELIED
+            UPON FOR PERSONAL, MEDICAL, LEGAL OR FINANCIAL DECISIONS AND YOU SHOULD CONSULT AN APPROPRIATE PROFESSIONAL
+            FOR SPECIFIC ADVICE TAILORED TO YOUR SITUATION.
+          </p>
+
+          <p>Express-Desk AND/OR ITS SUPPLIERS MAKE NO REPRESENTATIONS ABOUT THE SUITABILITY, RELIABILITY,
+            AVAILABILITY, TIMELINESS, AND ACCURACY OF THE INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS
+            CONTAINED ON THE Express-Desk WEB SITE FOR ANY PURPOSE. TO THE MAXIMUM EXTENT PERMITTED BY
+            APPLICABLE LAW, ALL SUCH INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS ARE PROVIDED "AS IS"
+            WITHOUT WARRANTY OR CONDITION OF ANY KIND. Express-Desk AND/OR ITS SUPPLIERS HEREBY DISCLAIM ALL
+            WARRANTIES AND CONDITIONS WITH REGARD TO THIS INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED
+            GRAPHICS, INCLUDING ALL IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+            PURPOSE, TITLE AND NON-INFRINGEMENT.
+          </p>
+
+          <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL Express-Desk AND/OR ITS
+            SUPPLIERS BE LIABLE FOR ANY DIRECT, INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL DAMAGES OR ANY
+            DAMAGES WHATSOEVER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF USE, DATA OR PROFITS, ARISING OUT OF
+            OR IN ANY WAY CONNECTED WITH THE USE OR PERFORMANCE OF THE Express-Desk WEB SITE, WITH THE DELAY OR
+            INABILITY TO USE THE Express-Desk WEB SITE OR RELATED SERVICES, THE PROVISION OF OR FAILURE TO
+            PROVIDE SERVICES, OR FOR ANY INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS OBTAINED THROUGH
+            THE Express-Desk WEB SITE, OR OTHERWISE ARISING OUT OF THE USE OF THE Express-Desk WEB SITE,
+            WHETHER BASED ON CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY OR OTHERWISE, EVEN IF Express-Desk OR
+            ANY OF ITS SUPPLIERS HAS BEEN ADVISED OF THE POSSIBILITY OF DAMAGES. BECAUSE SOME STATES/JURISDICTIONS DO
+            NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE
+            LIMITATION MAY NOT APPLY TO YOU. IF YOU ARE DISSATISFIED WITH ANY PORTION OF THE Express-Desk WEB
+            SITE, OR WITH ANY OF THESE TERMS OF USE, YOUR SOLE AND EXCLUSIVE REMEDY IS TO DISCONTINUE USING THE
+            Express-Desk WEB SITE.
+          </p>
+
+          <p><b>SERVICE CONTACT : info@express-desk.com</b>
+          </p>
+
+          <p><b>TERMINATION/ACCESS RESTRICTION</b>
+          </p>
+
+          <p>Express-Desk reserves the right, in its sole discretion, to terminate your access to the
+            Express-Desk Web Site and the related services or any portion thereof at any time, without notice.
+          </p>
+
+          <p><b>GENERAL</b></p>
+
+          <p>To the maximum extent permitted by law, this agreement is governed by the laws of Belgium and you hereby
+            consent to the exclusive jurisdiction and venue of courts in Brussels, Belgium, in all disputes arising out
+            of or relating to the use of the Express-Desk Web Site. Use of the Express-Desk Web Site is
+            unauthorized in any jurisdiction that does not give effect to all provisions of these terms and conditions,
+            including without limitation this paragraph. You agree that no joint venture, partnership, employment, or
+            agency relationship exists between you and Express-Desk as a result of this agreement or use of the
+            Express-Desk Web Site. Express-Desk 's performance of this agreement is subject to existing
+            laws and legal process, and nothing contained in this agreement is in derogation of Express-Desk 's
+            right to comply with governmental, court and law enforcement requests or requirements relating to your use
+            of the Express-Desk Web Site or information provided to or gathered by Express-Desk with
+            respect to such use. If any part of this agreement is determined to be invalid or unenforceable pursuant to
+            applicable law including, but not limited to, the warranty disclaimers and liability limitations set forth
+            above, then the invalid or unenforceable provision will be deemed superseded by a valid, enforceable
+            provision that most closely matches the intent of the original provision and the remainder of the agreement
+            shall continue in effect. Unless otherwise specified herein, this agreement constitutes the entire agreement
+            between the user and Express-Desk with respect to the Express-Desk Web Site and it
+            supersedes all prior or contemporaneous communications and proposals, whether electronic, oral or written,
+            between the user and Express-Desk with respect to the Express-Desk Web Site. A printed
+            version of this agreement and of any notice given in electronic form shall be admissible in judicial or
+            administrative proceedings based upon or relating to this agreement to the same extent an d subject to the
+            same conditions as other business documents and records originally generated and maintained in printed form.
+            It is the express wish to the parties that this agreement and all related documents be drawn up in English.
+          </p>
+
+          <p><b>COPYRIGHT AND TRADEMARK NOTICES:</b>
+          </p>
+
+          <p>All contents of the Express-Desk Web Site are: Copyright 2021 by Express-Desk Solutions and/or its
+            suppliers. All rights reserved.
+          </p>
+
+          <p><b>TRADEMARKS</b></p>
+
+          <p>The names of actual companies and products mentioned herein may be the trademarks of their respective
+            owners.</p>
+
+          <p>The example companies, organizations, products, people and events depicted herein are fictitious. No
+            association with any real company, organization, product, person, or event is intended or should be
+            inferred.
+
+            Any rights not expressly granted herein are reserved.
+
+            NOTICES AND PROCEDURE FOR MAKING CLAIMS OF COPYRIGHT INFRINGEMENT
+
+            Notifications of claimed copyright infringement should be sent to Service Provider's Designated Agent. ALL
+            INQUIRIES NOT RELEVANT TO THE FOLLOWING PROCEDURE WILL RECEIVE NO RESPONSE. See Notice and Procedure for
+            Making Claims of Copyright Infringement.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="privacyStatement" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Privacy statement</h5>
+        </div>
+        <div class="modal-body1">
+          <h6 class="toFit">Express-Desk  is committed to protecting your privacy and developing technology that gives you the most powerful
+         and safe online experience. This Statement of Privacy applies to the Express-Desk  Web site and governs data
+         collection and usage. By using the Express-Desk  website, you consent to the data practices described in this
+         statement.</h6>
+          <div class="flex-container">
+            <div class="flex-child">
+              <p>Express-Desk  collects personally identifiable information, such as your e-mail address, name, home or work
+                address or telephone number. Express-Desk  also collects anonymous demographic information, which is not unique
+                to you, such as your ZIP code, age, gender, preferences, interests and favorites.
+                
+                There is also information about your computer hardware and software that is automatically collected by Express-Desk
+                . This information can include: your IP address, browser type, domain names, access times and referring Web site
+                addresses. This information is used by Express-Desk  for the operation of the service, to maintain quality of the
+                service, and to provide general statistics regarding use of the Express-Desk  Web site.
+                
+                Please keep in mind that if you directly disclose personally identifiable information or personally sensitive data
+                through Express-Desk  public message boards, this information may be collected and used by others. Note:
+                Express-Desk  does not read any of your private online communications.
+                
+                Express-Desk  encourages you to review the privacy statements of Web sites you choose to link to from
+                Express-Desk  so that you can understand how those Web sites collect, use and share your information.
+                Express-Desk  is not responsible for the privacy statements or other content on Web sites outside of the
+                Express-Desk  and Express-Desk  family of Web sites.</p>
+            </div>
+            <div class="flex-child">
+              <p class="toCenter"><b>Collection of your Personal Information</b><br><i>These are the informations that we collect : e-mail,name, home or work adress, telephone, anonymous demographic information, preference, age, gender and favorites. We also collect informations about your computer hardware and software.</i></p>
+            </div>
+          </div>
+        
+         <div class="flex-container">
+          <div class="flex-child">
+            <p>Express-Desk  collects and uses your personal information to operate the Express-Desk  Web site and
+              deliver the services you have requested. Express-Desk  also uses your personally identifiable information to
+              inform you of other products or services available from Express-Desk  and its affiliates. Express-Desk 
+              may also contact you via surveys to conduct research about your opinion of current services or of potential new services
+              that may be offered.
+              
+              Express-Desk  does not sell, rent or lease its customer lists to third parties. Express-Desk  may, from
+              time to time, contact you on behalf of external business partners about a particular offering that may be of interest to
+              you. In those cases, your unique personally identifiable information (e-mail, name, address, telephone number) is not
+              transferred to the third party. In addition, Express-Desk  may share data with trusted partners to help us
+              perform statistical analysis, send you email or postal mail, provide customer , or arrange for deliveries. All
+              such third parties are prohibited from using your personal information except to provide these services to Express-Desk
+              , and they are required to maintain the confidentiality of your information.
+              
+              Express-Desk  does not use or disclose sensitive personal information, such as race, religion, or political
+              affiliations, without your explicit consent.
+              
+              Express-Desk  keeps track of the Web sites and pages our customers visit within Express-Desk , in order to
+              determine what Express-Desk  services are the most popular. This data is used to deliver customized content and
+              advertising within Express-Desk  to customers whose behavior indicates that they are interested in a particular
+              subject area.
+              
+              Express-Desk  Web sites will disclose your personal information, without notice, only if required to do so by law
+              or in the good faith belief that such action is necessary to: (a) conform to the edicts of the law or comply with legal
+              process served on Express-Desk  or the site; (b) protect and defend the rights or property of Express-Desk
+              ; and, (c) act under exigent circumstances to protect the personal safety of users of Express-Desk , or
+              the public.</p>
+          </div>
+          <div class="flex-child">
+            <p class="toCenter"><b>Use of your Personal Information</b><br><i>Express-Desk's use of you personal information is to operate services and products you requested. We only use those informations internally. These informations are only disclosed to third parties in case those parties need to provide a service or a product directly related to Express-Desk products or services.</i></p>
+          </div>
+         
+         </div>
+         <div class="flex-container">
+         
+          
+          <div class="flex-child">
+            <p>The Express-Desk  Web site use "cookies" to help you personalize your online experience. A cookie is a text file
+              that is placed on your hard disk by a Web page server. Cookies cannot be used to run programs or deliver viruses to your
+              computer. Cookies are uniquely assigned to you, and can only be read by a web server in the domain that issued the
+              cookie to you.
+              
+              One of the primary purposes of cookies is to provide a convenience feature to save you time. The purpose of a cookie is
+              to tell the Web server that you have returned to a specific page. For example, if you personalize Express-Desk 
+              pages, or register with Express-Desk  site or services, a cookie helps Express-Desk  to recall your
+              specific information on subsequent visits. This simplifies the process of recording your personal information, such as
+              billing addresses, shipping addresses, and so on. When you return to the same Express-Desk  Web site, the
+              information you previously provided can be retrieved, so you can easily use the Express-Desk  features that you
+              customized.
+              
+              You have the ability to accept or decline cookies. Most Web browsers automatically accept cookies, but you can usually
+              modify your browser setting to decline cookies if you prefer. If you choose to decline cookies, you may not be able to
+              fully experience the interactive features of the Express-Desk  services or Web sites you visit.</p>
+          </div>
+          <div class="flex-child">
+            <p class="toCenter"><b>Use of Cookies</b><br><i>We only use cookies to personalize your online experience. You can accept or decline cookies. See the text on the left to have more details about "cookies".</i></p>
+          </div>
+         </div>
+         <div class="flex-container">
+         
+         
+          <div class="flex-child">
+            <p>Express-Desk  secures your personal information from unauthorized access, use or disclosure. Express-Desk 
+              secures the personally identifiable information you provide on computer servers in a controlled, secure environment,
+              protected from unauthorized access, use or disclosure. When personal information (such as a credit card number) is
+              transmitted to other Web sites, it is protected through the use of encryption, such as the Secure Socket Layer (SSL)
+              protocol</p>
+          </div>
+          <div class="flex-child">
+            <p class="toCenter"><b>Security of your Personal Information</b><br><i>Express-Desk secures your personal information from unauthorized access, use or disclosure.</i></p>
+          </div>
+         </div>
+         <div class="flex-container">
+         
+         
+          <div class="flex-child">
+            <p>Express-Desk  will occasionally update this Statement of Privacy to reflect company and customer feedback.
+              Express-Desk  encourages you to periodically review this Statement to be informed of how Express-Desk  is
+              protecting your information.</p>
+          </div>
+          <div class="flex-child">
+            <p class="toCenter"><b>Changes to this Statement</b><br><i>Express-Desk  will occasionally update this Statement of Privacy.</i> </p>
+          </div>
+         </div>
+         <div class="flex-container">
+          
+          <div class="flex-child">
+            <p>Express-Desk  welcomes your comments regarding this Statement of Privacy. If you believe that Express-Desk
+              has not adhered to this Statement, please contact Express-Desk  at <b>info@express-desk.com</b> We will use
+             commercially reasonable efforts to promptly determine and remedy the problem.</p>
+          </div>
+          <div class="flex-child">
+            
+            <p class="toCenter"><b>Contact Information</b><br><i>info@express-desk.com</i></p>
+          </div>
+         </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+  </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade-scale" tabindex="-1" role="dialog" id="clientintegrationDetails">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header"> 
+        </div>
+        <div class="modal-body">
+          <p> When a Service Desk agents accepts an incoming chat
+            conversation, a chat window pops up, embedding a <em>Remedy ticket.</em>
+            This convenient setup provides all information an agent might need
+            right in front of him: </p>
+          <ul>
+            <li>Information about the customer are pre-filled</li>
+            <li>Some fields (categorization, summary,...) can be pre-filled
+              based on the information captured by the ChatBot.</li>
+            <li>In case the employee asked for an update about an existing
+              ticket, that ticket is automatically displayed.</li>
+          </ul>
+          <br>
+          <br>
+          When files are sent by the user or by the agent, <em>the files are
+            automatically saved</em> in the ticket work log. <br>
+          <br>
+          Chat transcripts are automatically saved in the ticket log as well.
+          <br>
+          <p></p>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade-scale" tabindex="-1" role="dialog" id="expressReportDetails">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header"> 
+        </div>
+        <div class="modal-body">
+          <p> ExpressReport provides a real-time overview of ongoing
+            activities.<br>
+            <br>
+            ExpressReport features a dashboard with configurable charts and
+            widgets.
+          </p>
+          <p>Supervisors can manage their support teams, monitor presence and
+            activity of <em>service desk agents,</em> and plan for resource
+            availability.</p>
+          <p>ExpressReport allows to control and override the default queing
+            mechanism of ExpressAgent.<br>
+            <br>
+          </p>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade-scale" tabindex="-1" role="dialog" id="socialmediaintegrationDetails">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header"> 
+        </div>
+        <div class="modal-body">
+          <p> The social media connector allows to connect popular <em>chat Apps</em>
+            to <em>ExpressDesk.</em> <br>
+            <br>
+            The same workflow is triggered as if the user would be contacting
+            the Service Desk via <em>Ms Teams or Skype for Business,</em> providing a
+            unified user experience accross all <em>chat platforms.</em><br>
+            Service Desk agents serve all users the same way regardless of the
+            chat App used by the end users.
+          </p>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade-scale" tabindex="-1" role="dialog" id="videoPopup">
+    <div class="modal-dialog" role="document" style="width:90%;">
+      <div class="modal-content">
+        <div class="modal-header"> 
+        </div>
+        <div class="modal-body"  id="videocontainer"> <video controls="controls"
+            preload="metadata" id="videoitem">
+            <source src="video/Teams-Remedy-integration.mp4" loading="lazy" type="video/mp4">
+            <div style="border: 1px solid black ; padding: 8px ;"> Sorry, your
+              browser cannot play videos. Please try with another browser. </div>
+          </video> </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Mainmenu-area-->
+  <div class="mainmenu-area" data-spy="affix" data-offset-top="100">
+    <div class="container">
+      <!--Logo-->
+      <div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse"
+          data-target="#primary-menu"> <span class="icon-bar"></span>
+          <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a href="#" class="navbar-brand logo"> <img src="images/logoHelmet.png" alt="logo : Helmet en transition" style="height: 135px; width: 154px;" loading="lazy">
+        </a>
+      </div>
+      <!--Logo/-->
+      <nav class="collapse navbar-collapse" id="primary-menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#home-page">Home</a></li>
+          <li><a href="#service-page">A propos</a></li>
+          <li><a href="#price-page">Initiative</a></li>
+          <li><a href="#benefits-page">Agenda</a></li>
+          <li><a href="#feature-page">Nous suivre</a></li>
+          <li><a href="#video-page">Videos</a></li>
+          <li><a href="#contact-page">Contact</a></li>
+          <li><a href="https://test.transitionhelmet.be/" target="_blank">Site wordpress</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!--Mainmenu-area/-->
+  <!--Header-area-->
+  <header class="header-area overlay full-height relative v-center" id="home-page">
+    <div class="absolute "></div>
+    <div>
+      <!-- class="container"> -->
+      <div class="row v-center">
+        <div class=" col-md-2 header-text"> &nbsp; </div>
+        <div class="col-xs-12 col-md-5 header-text">
+          <h1 id="margin10">Lorem Ipsum dolor sit amet.</h1>
+          <p style="text-align: justify;" id="margin10">
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
+          </p>
+          <button type="button" class="button white" data-toggle="modal" data-target="#videoPopup"
+            onclick="resizeVideo()">Visioner la vidéo</button>
+        </div>
+        <div class="hidden-xs hidden-sm floatingright" style="width:41.66666666%;">
+          <div class="item fullsize" > <img src="images/réseauTr.jpg" loading="lazy"
+              alt="image réseaux en transition"> </div>
+        </div>
+        <!-- <div class="hidden-xs hidden-sm col-md-5 text-right">
+            <div class="screen-box screen-slider">              <div class="item fullsize"> <img src="images/expressdesk-Teams-Side.png" alt=""> </div>              <div class="item"> <img src="images/screen-2.jpg" alt=""> </div>            </div>
+          </div>  -->
+      </div>
+    </div>
+  </header>
+  <!--Header-area/-->
+  <!--Feature-area-->
+  <section class="gray-bg section-padding" id="service-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
+          <div class="page-title ">
+            <h1>A propos</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="textonleft">
+          <h2 id="VirtualChat">Quel est notre projet ?</h2>
+          <br>
+          <div class="left">
+            <p>Helmet en Transition a pour objectif de rendre le quartier florissant, convivial, respectueux de l’environnement et des ressources naturelles. </p>
+            <p> Pour cela, Helmet en Transition sensibilise la population aux enjeux climatiques, énergétiques, économiques et sociaux, et soutient un tas d’initiatives citoyennes locales.</p>
+            <p>Helmet en Transition a aussi pour mission de rassembler les habitants de tous les horizons afin qu’ils puissent partager des idées pour un monde durable et solidaire, mais aussi réfléchir ensemble aux solutions concrètes pour améliorer la qualité de vie dans le quartier.</p>
+         
+          </div>
+          <div class="right"> <img src="images/logo-Helmet-transition.png" loading="lazy"
+              alt="Users start a chat with ExpressDesk to contact your IT Service Desk">
+          </div>
+          <div class="singlelineitem"> <button type="button" class="button" data-toggle="modal"
+              data-target="#expressAgentDetails">Lire plus </button> </div>
+        </div>
+        <br>
+        <br>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
+          <div class="page-title ">
+            <h1 class="nosInitiatives">Nos initiatives</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="textonright">
+          <h2 id="papotageMensuel">Le papotage mensuel</h2>
+          <br>
+          <div class="right">
+            <p class="cafe-transition">Café Transition
+            </p>
+            <ul>
+              <li>Un jeudi soir par mois au Babelmet, nous vous invitons à lever le coude ou la fourchette dès 20h afin de découvrir les beaux projets du collectif, de discuter de notre vie de quartier et de réfléchir à la construction d’un monde durable, juste et respectueux de l’environnement.</li>
+              <li>Contact : <a href="">Aline Morris</a></li>
+            </ul>
+          </div>
+          <div class="left">
+           <img src="images/cafeTransition.jpg">
+          </div>
+          <div class="singlelineitem"> <button type="button" class="button" data-toggle="modal"
+              data-target="#clientintegrationDetails">Lire plus </button> </div>
+        </div>
+      </div>
+      <hr> <br>
+      <div class="row">
+        <div class="textonleft">
+          <h2 id="potagerCompost">Potager & compost collectifs </h2>
+          <br>
+          <br>
+          <h3 id="jardinPartage">Jardin partagé</h3>
+          <div class="left">
+            <p>À l’entrée de la réserve naturelle du Moeraske, notre jardin partagé est occupé par un compost géré collégialement et un potager divisé en parcelles gérées collectivement, pour le plaisir de travailler la terre et de produire des légumes bio et locaux.</p>
+            <ul>
+              <li>Contact : <a href="">Aline Morris</a></li>
+            </ul>
+          </div>
+          <div class="right"> <img src="images/jardinsPartagés.jpg" alt="image about an express desk report" loading="lazy">
+          </div>
+          <div class="singlelineitem"> <button type="button" class="button" data-toggle="modal"
+              data-target="#expressReportDetails">Lire plus </button> </div>
+        </div>
+        <br>
+        <br>
+      </div>
+      <hr> <br>
+      <div class="row">
+        <div class="textonright">
+          <h2 class="adoptez-un-arbre">Adoptez un arbre</h2>
+          <h3 class="groupe-nature">Groupe Nature</h3>
+          <div class="right">
+            <p class="paragrapheAdopteArbre">Aimeriez-vous voir les pieds de nos arbres entourés de plantes et de fleurs plutôt que de déchets? Aide, infos et conseils pour l'adoption et les plantations de "votre" arbre. Vos frais peuvent être couverts sur base d'un forfait par arbre !</p>
+            <ul>
+              <li>Contact : <a href="">Aline Morris</a></li>
+            </ul>
+          </div>
+          <div class="left">
+         <img src="images/adopteArbre.jpg" alt="image de jeunes pousses">
+          </div>
+          <div class="singlelineitem"> <button type="button" class="buttonAdopteArbre" data-toggle="modal"
+              data-target="#socialmediaintegrationDetails">Lire plus </button>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="textonleft">
+          <h3 class="cercle-de-transition">Cercle de transition intérieure</h3>
+          <br>
+          <h2 class="partagez-vos-emotion">Partagez vos émotions</h2>
+          <br>
+          <div class="left">
+            <br>
+            <p class="paragrapheAdopteArbre">À l’entrée de la réserve naturelle du Moeraske, notre jardin partagé est occupé par un compost géré collégialement et un potager divisé en parcelles gérées collectivement, pour le plaisir de travailler la terre et de produire des légumes bio et locaux.</p>
+            <ul>
+              <li>Contact : <a href="">Aline Morris</a></li>
+            </ul>
+          </div>
+          <div class="right">
+         <img src="images/partageEmotions.jpg" alt="image de chatons">
+          </div>
+          <div class="singlelineitem"> <button type="button" class="buttonAdopteArbre" data-toggle="modal"
+              data-target="#socialmediaintegrationDetails">Lire plus </button>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="textonleft">
+          <h3 class="cercle-de-transition">Les GASAPs</h3>
+          <h2 class="partagez-vos-emotion">Groupe d'achat de légumes</h2>
+          <br>
+          <br>
+          <div class="right">
+            <br>
+            <p class="paragrapheAdopteArbre">Un GASAP est un partenariat direct entre des mangeurs et un(e) producteur(rice), qui s’engagent réciproquement pour une saison. Toutes les deux semaines, notre producteur livre ses légumes et autres produits. Les mangeurs procèdent à la distribution des paniers. Il y a deux GASAPs actifs dans le quartier.</p>
+            <ul>
+              <li>Contact : <a href="">Aline Morris</a></li>
+            </ul>
+          </div>
+          <div class="left">
+         <img src="images/gasap.jpg" alt="image de chatons">
+          </div>
+          <div class="singlelineitem"> <button type="button" class="buttonAdopteArbre" data-toggle="modal"
+              data-target="#socialmediaintegrationDetails">Lire plus </button>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="textonleft">
+          <h3 class="cercle-de-transition">Le GasHélargi</h3>
+          <h2 class="partagez-vos-emotion">Groupe d'achats bio</h2>
+          <div class="left">
+            <br>
+            <p class="paragrapheAdopteArbre">Le GasHélargi est un groupe d’achats collectifs de produits bio et/ou artisanaux en circuit court du producteur au consommateur (miel, viande, chicons, savons, etc.). Nous cherchons à promouvoir une alimentation saine dans le respect des producteurs et de la planète. Il n’y a pas d’engagement à acheter régulièrement, le groupe fonctionne sur base de propositions ponctuelles des producteurs.</p>
+            <ul>
+              <li>Contact : <a href="">Aline Morris</a></li>
+            </ul>
+          </div>
+          <div class="right">
+         <img src="images/achatBio.jpg" alt="définition de qu'est ce qu'est le gasap">
+          </div>
+          <div class="singlelineitem"> <button type="button" class="buttonAdopteArbre" data-toggle="modal"
+              data-target="#socialmediaintegrationDetails">Lire plus </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="price-area overlay section-padding" id="price-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+          <div class="page-title">
+            <h2>lorem ipsum</h2>
+            <p>lorem ipsum </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="price-table">
+            <h3 class="blackText">lorem ipsum</h3>
+            <hr>
+            <ul>
+              <p>lorem ipsum<br>
+                <span class="amount"></span></p>
+                <p>lorem ipsum </p>
+              <p>lorem ipsum</p>
+              <p>lorem ipsum
+                </p> <br>
+              <p>lorem ipsum</p>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+            </ul>
+            <hr> <button type="button" class="button" onclick="askaquote()">lorem ipsum</button>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="price-table active"> <span class="price-info"><span class="ti-crown"></span></span>
+            <h3 class="blackText">lorem ipsum</h3>
+            <hr>
+            <ul class="list-unstyled">
+              <li><span class="amount">lorem ipsum<br>
+                </span></li>
+              <li><span class="amount"> lorem ipsum</span><strong class="amount"><br>
+                </strong></li>
+              <li>lorem ipsum</li>
+            </ul>
+            
+            <ul>
+              <p>lorem ipsum</p>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+            </ul>
+            <hr> <button type="button" class="button" onclick="askaquote()">lorem ipsum</button>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="price-table">
+            <h3 class="blackText">lorem ipsum</h3>
+            <hr>
+            <ul class="list-unstyled">
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum </li>
+              <li>lorem ipsum</li>
+              <li>lorem ipsum</li>
+            </ul>
+            <hr> <button type="button" class="button" onclick="askaquote()">poser une question</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="gray-bg section-padding" id="benefits-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
+          <div class="page-title ">
+            <h2>lorem ipsum</h2>
+            <p> lorem ipsum </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/IncreaseVisibilityIcon.png" alt="Teams single point of contact" loading="lazy">
+            </div>
+            <h4>lorem ipsum</h4>
+            <p>lorem ipsum </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/service-icon-2.png"
+                alt="Teams Remedy integration easily configurable" loading="lazy">
+            </div>
+            <h4>lorem ipsum</h4>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/service-icon-1.png"
+                alt="Secure Teams adoption as chat channel for Remedy" loading="lazy">
+            </div>
+            <h4>lorem ipsum</h4>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/service-icon-3.png"
+                alt="Secure Teams adoption as chat channel for Remedy" loading="lazy">
+            </div>
+            <h4>lorem ipsum</h4>
+            <p> lorem ipsum</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/portfolio-icon-Customer-Satisfaction.png" loading="lazy"
+                alt="Secure Teams adoption as chat channel for Remedy">
+            </div>
+            <h4>lorem ipsum</h4>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/bestPractices.png" loading="lazy"
+                alt="Secure Teams adoption as chat channel for Remedy">
+            </div>
+            <h4>lorem ipsum</h4>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Feature-area/-->
+  <!--
+    <section class="angle-bg sky-bg section-padding">      <div class="container">        <div class="row">          <div class="col-xs-12">
+            <div id="caption_slide" class="carousel slide caption-slider" data-ride="carousel">              <div class="carousel-inner" role="listbox">                <div class="item active row">                  <div class="v-center">
+                    <div class="col-xs-12 col-md-6">                      <div class="caption-title" data-animation="animated fadeInUp">                        <h2>Teams integration</h2>                      </div>
+                      <div class="caption-desc" data-animation="animated fadeInUp">                        <p>ExpressDesk provides a native integration between, on                          User side, Ms Teams and/or Skype for Business, and on                          Service Desk side, the ExpressDesk Chat app and BMC
+                          Remedy</p>                      </div>                      <div class="caption-button" data-animation="animated fadeInUp">                        <a href="#" class="button">Read more</a> </div>
+                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo one" data-animation="animated fadeInRight">                        <img src="images/screen-7.jpg" alt=""> </div>
+                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo two" data-animation="animated fadeInRight">                        <img src="images/screen-2.jpg" alt=""> </div>
+                    </div>                  </div>                </div>                <div class="item row">
+                  <div class="v-center">                    <div class="col-xs-12 col-md-6">                      <div class="caption-title" data-animation="animated fadeInUp">                        <h2>Choose your Weapon</h2>
+                      </div>                      <div class="caption-desc" data-animation="animated fadeInUp">                        <p>Activate your selection of popular Chat Apps using                          our optional Social Apps connector:</p>
+                        <ul>                          <li>WeChat</li>                          <li>WhatsApp</li>                          <li>Facebook Messenger</li>
+                          <li>Slack</li>                          <li>Viber</li>                          <li>Telegram</li>                        </ul>
+                        <p></p>                      </div>                      <div class="caption-button" data-animation="animated fadeInUp">                        <a href="#" class="button">Read more</a> </div>
+                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo one" data-animation="animated fadeInRight">                        <img src="images/screen-3.jpg" alt=""> </div>
+                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo two" data-animation="animated fadeInRight">                        <img src="images/screen-4.jpg" alt=""> </div>
+                    </div>                  </div>                </div>                <div class="item row">
+                  <div class="v-center">                    <div class="col-xs-12 col-md-6">                      <div class="caption-title" data-animation="animated fadeInUp">                        <h2>SAAS or On-Prem?</h2>
+                      </div>                      <div class="caption-desc" data-animation="animated fadeInUp">                        <p>ExpressDesk can be installed on Premises (on your own                          infrastructure) or we can provide you with a SAAS
+                          (Software As A Service) solution. </p>                        <p>Our SAAS offering includes highly available hosting,                          licenses, support and maintenance, installation of                          updates, monitoring and remote assistance.</p>
+                      </div>                      <div class="caption-button" data-animation="animated fadeInUp">                        <a href="#" class="button">Read more</a> </div>                    </div>
+                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo one" data-animation="animated fadeInRight">                        <img src="images/screen-1.jpg" alt=""> </div>                    </div>
+                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo two" data-animation="animated fadeInRight">                        <img src="images/screen-2.jpg" alt=""> </div>                    </div>
+                  </div>                </div>                <div class="item row">                  <div class="v-center">
+                    <div class="col-xs-12 col-md-6">                      <div class="caption-title" data-animation="animated fadeInUp">                        <h2>Awesome design</h2>                      </div>
+                      <div class="caption-desc" data-animation="animated fadeInUp">                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing                          elit, sed do eiusmod tempor incididunt ut labore et                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip                          ex ea commodo consequat. Duis aute</p>                      </div>                      <div class="caption-button" data-animation="animated fadeInUp">
+                        <a href="#" class="button">Read more</a> </div>                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo one" data-animation="animated fadeInRight">
+                        <img src="images/screen-3.jpg" alt=""> </div>                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo two" data-animation="animated fadeInRight">
+                        <img src="images/screen-4.jpg" alt=""> </div>                    </div>                  </div>                </div>
+              </div>                            <ol class="carousel-indicators caption-indector">                <li data-target="#caption_slide" data-slide-to="0" class="active">
+                  <strong>Ms Teams native support</strong>Ms Teams and Skype for                  Business integrate with BMC Remedy and SmartIT.</li>                <li data-target="#caption_slide" data-slide-to="1"> <strong>Additional                    Chat Channels </strong>Add WeChat or WhatsApp support. </li>
+                <li data-target="#caption_slide" data-slide-to="2"> <strong>SAAS                    or On-Premise? </strong>You choose. </li>                <li data-target="#caption_slide" data-slide-to="3"> <strong>Lorem                    ipsum </strong>consectetur adipisicing elit. </li>
+              </ol>            </div>          </div>        </div>
+      </div>    </section>-->
+  <section class="gray-bg section-padding" id="feature-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+          <div class="page-title">
+            <h2>lorem ipsum</h2>
+            <p>lorem ipsum </p>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/portfolio-icon-3.png" loading="lazy"
+                alt="Teams integration with BMC Remedy, BMC Helix and BMC SmartIT">
+            </div>
+            <h3>lorem ipsum</h3>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/portfolio-icon-2.png" loading="lazy"
+                alt="Hybrid intelligence - combine AI with humans">
+            </div>
+            <h3>lorem ipsum</h3>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/portfolio-icon-4.png" alt="Automatic translation features" loading="lazy">
+            </div>
+            <h3>lorem ipsum</h3>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/portfolio-icon-5.png" alt="Mobile and Tablet support" loading="lazy">
+            </div>
+            <h3> lorem ipsum</h3>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/portfolio-icon-1.png" alt="Teams Cards supported" loading="lazy">
+            </div>
+            <h3>lorem ipsum</h3>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="box">
+            <div class="box-icon"> <img src="images/portfolio-icon-6.png" alt="Monitoring and Reporting" loading="lazy">
+            </div>
+            <h3>lorem ipsum</h3>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+            <div class="page-title">
+              <h3>lorem ipsum</h3>
+              <ul>
+               <li>lorem ipsum</li>
+              </ul>
+              <p>lorem ipsum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section-padding gray-bg" id="video-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+          <div class="page-title">
+            <h2>lorem ipsum</h2>
+            <p>lorem ipsum</p>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid row first THREE videos -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          <!--Modal: Name-->
+          <h4>
+            lorem ipsum
+          </h4>
+          <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+
+              <!--Content-->
+              <div class="modal-content">
+
+                <!--Body-->
+                <div class="modal-body mb-0 p-0">
+
+                  <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nCaDlI7ght8" loading="lazy"
+                      allowfullscreen></iframe>
+                  </div>
+
+                </div>
+
+                <!--Footer-->
+
+   
+              
+                <div class="modal-footer justify-content-center">
+                  <span class="mr-4">Suivez-nous !</span>
+                   <div class="socialMediaButtons">
+                  <!--Twitter-->
+                  <a type="button" class="btn-floating btn-sm btn-tw" href="https://twitter.com/ExpressDesk"
+                    target="_blank"><i class="ti-twitter"></i></a>
+                  <!--Linkedin-->
+                  <a type="button" class="btn-floating btn-sm btn-gplus"
+                    href="https://be.linkedin.com/company/express-desk" target="_blank"><i class="ti-linkedin"></i></a>
+                  <!--Youtube-->
+                  <a type="button" class="btn-floating btn-sm btn-ins"
+                    href="https://www.youtube.com/channel/UCbBE3Q4fQTTInPRlosS4MMA" target="_blank"><i
+                      class="ti-youtube"></i></a>
+                    </div> 
+
+                  <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                    data-dismiss="modal">Close</button>
+                 </div>
+
+             
+
+
+
+              </div>
+              <!--/.Content-->
+
+            </div>
+          </div>
+          <!--Modal: Name-->
+
+          <a><img class="img-fluid z-depth-1" width="640px" height="424px"
+              src="https://www.express-desk.com/images/expressdesk-predefiniedMessages-Remedy.png"
+              alt="image about express desk integration" data-toggle="modal" data-target="#modal1" loading="lazy"></a>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <!--Modal: Name-->
+          <h4>
+            lorem ipsum
+          </h4>
+          <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+
+              <!--Content-->
+              <div class="modal-content">
+
+                <!--Body-->
+                <div class="modal-body mb-0 p-0">
+
+                  <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                    <iframe class="embed-responsive-item" width="560" height="315"
+                      src="https://www.youtube.com/embed/CbpJEtYo0n0" frameborder="0"
+                      loading="lazy"
+                      allowfullscreen></iframe>
+                  </div>
+
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                  <span class="mr-4">Follow us !</span>
+                  <!--Twitter-->
+                  <a type="button" class="btn-floating btn-sm btn-tw" href="https://twitter.com/ExpressDesk"
+                    target="_blank"><i class="ti-twitter"></i></a>
+                  <!--Linkedin-->
+                  <a type="button" class="btn-floating btn-sm btn-gplus"
+                    href="https://be.linkedin.com/company/express-desk" target="_blank"><i class="ti-linkedin"></i></a>
+                  <!--Youtube-->
+                  <a type="button" class="btn-floating btn-sm btn-ins"
+                    href="https://www.youtube.com/channel/UCbBE3Q4fQTTInPRlosS4MMA" target="_blank"><i
+                      class="ti-youtube"></i></a>
+
+                  <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                    data-dismiss="modal">Close</button>
+
+                </div>
+
+              </div>
+              <!--/.Content-->
+
+            </div>
+          </div>
+          <!--Modal: Name-->
+
+          <a><img class="img-fluid z-depth-1" width="640px" height="424px"
+              src="https://i.ytimg.com/vi/yTBwKty20iI/maxresdefault.jpg"
+              alt="image about express desk integration with remedy" data-toggle="modal" data-target="#modal6" loading="lazy"></a>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <!--Modal: Name-->
+          <h4>
+            lorem ipsum
+          </h4>
+          <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+
+              <!--Content-->
+              <div class="modal-content">
+
+                <!--Body-->
+                <div class="modal-body mb-0 p-0">
+
+                  <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                    <iframe class="embed-responsive-item" width="1280" height="586"
+                      src="https://www.youtube.com/embed/yTBwKty20iI" frameborder="0"
+                      loading="lazy"
+                      allowfullscreen></iframe>
+                  </div>
+
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                  <span class="mr-4">Follow us !</span>
+                  <!--Twitter-->
+                  <a type="button" class="btn-floating btn-sm btn-tw" href="https://twitter.com/ExpressDesk"
+                    target="_blank"><i class="ti-twitter"></i></a>
+                  <!--Linkedin-->
+                  <a type="button" class="btn-floating btn-sm btn-gplus"
+                    href="https://be.linkedin.com/company/express-desk" target="_blank"><i class="ti-linkedin"></i></a>
+                  <!--Youtube-->
+                  <a type="button" class="btn-floating btn-sm btn-ins"
+                    href="https://www.youtube.com/channel/UCbBE3Q4fQTTInPRlosS4MMA" target="_blank"><i
+                      class="ti-youtube"></i></a>
+
+                  <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                    data-dismiss="modal">Close</button>
+
+                </div>
+
+              </div>
+              <!--/.Content-->
+
+            </div>
+          </div>
+          <!--Modal: Name-->
+
+          <a><img class="img-fluid z-depth-1" width="640px" height="424px"
+              src="https://i.ytimg.com/vi/AsVRk08hzeQ/maxresdefault.jpg" alt="image about Lync integration"
+              data-toggle="modal" data-target="#modal4" loading="lazy"></a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+  </section>
+  <footer class="footer-area relative sky-bg" id="contact-page">
+    <div class="absolute footer-bg"></div>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+            <div class="page-title">
+              <h2>Contactez nous !</h2>
+              <p>Vous pouvez utiliser le formulaire suivant pour nous envoyer votre message, requète ou question</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <address class="side-icon-boxes">
+              <div class="side-icon-box">
+                <div class="side-icon"> <img src="images/location-arrow.png" alt=" small icon of a location arrow" loading="lazy">
+                </div>
+                <p><strong>Address: </strong></p>
+                <p></p>
+                <p>Belgium</p>
+              </div>
+              <div class="side-icon-box">
+                <div class="side-icon"> <img src="images/phone-arrow.png" alt="small picture of a phone icon" loading="lazy">
+                </div>
+                <p><strong>Telephone: </strong> <a href="callto:8801812726495">lorem ipsum</a></p>
+              </div>
+            </address>
+          </div>
+          <div class="col-xs-12 col-md-8">
+            <form action="process.php" id="contact-form" method="post" class="contact-form">
+              <div class="form-double"> <input id="form-name" name="form-name" placeholder="Your name"
+                  class="form-control" required="required" type="text"> <input id="form-email" name="form-email"
+                  class="form-control" placeholder="E-mail address" required="required" type="email">
+              </div>
+              <div class="form-group">
+                <label for="subject" class="label">
+                   </label>
+                <select id="subject" name="subject" class="form-control" required="required">
+                    <option value="na" selected="">Choisissez:</option>
+                    <option value="service">Requète</option>
+                    <option value="suggestions">Message</option>
+                    <option value="product">question</option>
+                </select>
+            </div>
+              <textarea name="form-message" id="form-message" rows="5" class="form-control" placeholder="Your message"
+                required="required"></textarea>
+              <div class="elem-group"> Enter the Captcha Text<br>
+                <img src="captcha.php" alt="CAPTCHA" class="captcha-image" loading="lazy"><button
+                  class="button white refresh-captcha">Refresh Captcha</button>
+                <br>
+                <input id="captcha" name="form-captcha_challenge" placeholder="Enter the Captcha Text"
+                  pattern="[A-Z0-9]{6}" class="form-control" type="text">
+              </div>
+              <button type="submit" class="button">Submit</button>
+            </form>
+            <h6> Vos données personnelles seront traités sous la reponsabilité de Helmet en transition ASBL en conformité avec le RGPD (EU regulation 2016/679 ou "RGPD") et la loi belge.
+              Vous pouvez obtenir plus d'informations sur la façon d'on nous traiterons ces données en cliquant ici : <a href="#privacyStatement" data-toggle="modal" data-target="#privacyStatement">Privacy statement.</a></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+    <div class="footer-middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 pull-right">
+            <ul class="social-menu text-right x-left">
+              <li><a href="https://twitter.com/ExpressDesk" target="_blank"><i class="ti-twitter"></i></a><br>
+              </li>
+              <li><a href="https://be.linkedin.com/company/express-desk" target="_blank"><i
+                    class="ti-linkedin"></i></a><br>
+              </li>
+              <li><a href="https://www.youtube.com/channel/UCbBE3Q4fQTTInPRlosS4MMA" target="_blank"><i
+                    class="ti-youtube"></i></a><br>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <p>Helmet en transition : définition "légal" <small></small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-light text-center text-lg-start">
+      <!-- Grid container for footer -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+            <a href="#termsConditions" data-toggle="modal" data-target="#termsConditions" class="text-dark">
+              <h5 class="text-uppercase">Terms & conditions</h5>
+            </a>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+            <a href="#privacyStatement" data-toggle="modal" data-target="#privacyStatement" class="text-dark">
+              <h5 class="text-uppercase">Privacy Statement</h5>
+            </a>
+
+          </div>
+
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright : Helmet en transition ASBL. All rights
+        reserved.
+        <!-- if the copyright has to be made clickable : <a class="text-dark" href="https://mdbootstrap.com/"></a> -->
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+  </footer>
+  <!--Vendor-JS-->
+  <script src="js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <!--Plugin-JS-->
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/contact-form.js"></script>
+  <script src="js/jquery.parallax-1.1.3.js"></script>
+  <script src="js/scrollUp.min.js"></script>
+  <script src="js/magnific-popup.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <!--Main-active-JS-->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

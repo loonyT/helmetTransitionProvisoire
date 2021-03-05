@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>ExpressDesk - Ms Teams integration with BMC Remedy</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>    <![endif]-->
+  </head>
+  <body data-spy="scroll" data-target="#primary-menu">
+    <!-- -->
+    <div class="preloader">
+      <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
+    </div>
+    <!-- -->
+    <div class="modal" tabindex="-1" role="dialog" id="expressAgentDetails">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal"
+
+              aria-label="Close"> <span aria-hidden="true">×</span> </button>
+          </div>
+          <div class="modal-body">
+            <p> Upon starting a chat conversation with this contact, a
+              configurable workflow drive the behavior of ExpressAgent.
+              ExpressAgent can ask questions, supports Natural Language
+              Understanding through 3rd parties integrations, and can transfer
+              conversations to service desk agents when needed. <br>
+              <br>
+              ExpressAgent integrates to your ticketing system to retrieve
+              information about users, existing tickets and so on. It can even
+              create or update tickets if needed. </p>
+            <p>ExpressAgent can be interfaced with many 3rd party APIs (Google
+              translate, Systran translator, Google DialogFlow,…) to provide
+              advanced features such as automatic real-time translation and
+              Natural Language Processing. </p>
+            <p>ExpressAgent provides advanced queuing mechanisms that can be
+              controlled from the other modules.<br>
+              <br>
+            </p>
+          </div>
+          <div class="modal-footer"> <button type="button" class="btn btn-secondary"
+
+              data-dismiss="modal">Close</button> </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="clientintegrationDetails">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal"
+
+              aria-label="Close"> <span aria-hidden="true">×</span> </button>
+          </div>
+          <div class="modal-body">
+            <p> When a Service Desk agents accepts an incoming chat
+              conversation, a chat window pops up, embedding a Remedy ticket.
+              This convenient setup provides all information an agent might need
+              right in front of him: </p>
+            <ul>
+              <li>Information about the customer are pre-filled</li>
+              <li>Some fields (categorization, summary,...) can be pre-filled
+                based on the information captured by the ChatBot.</li>
+              <li>In case the employee asked for an update about an existing
+                ticket, that ticket is automatically displayed.</li>
+            </ul>
+            <br>
+            <br>
+            When files are sent by the user or by the agent, the files are
+            automatically saved in the ticket work log. <br>
+            <br>
+            Chat transcripts are automatically saved in the ticket log as well.
+            <br>
+            <p></p>
+          </div>
+          <div class="modal-footer"> <button type="button" class="btn btn-secondary"
+
+              data-dismiss="modal">Close</button> </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="expressReportDetails">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal"
+
+              aria-label="Close"> <span aria-hidden="true">×</span> </button>
+          </div>
+          <div class="modal-body">
+            <p> ExpressReport provides a real-time overview of ongoing
+              activities.<br>
+              <br>
+              ExpressReport features a dashboard with configurable charts and
+              widgets.</p>
+            <p>Supervisors can manage their support teams, monitor presence and
+              activity of service desk agents, and plan for resource
+              availability.</p>
+            <p>ExpressReport allows to control and override the default queing
+              mechanism of ExpressAgent.<br>
+              <br>
+            </p>
+          </div>
+          <div class="modal-footer"> <button type="button" class="btn btn-secondary"
+
+              data-dismiss="modal">Close</button> </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="socialmediaintegrationDetails">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal"
+
+              aria-label="Close"> <span aria-hidden="true">×</span> </button>
+          </div>
+          <div class="modal-body">
+            <p> The social media connector allows to connect popular chat Apps
+              to ExpressDesk.<br>
+              <br>
+              The same workflow is triggered as if the user would be contacting
+              the Service Desk via Ms Teams or Skype for Business, providing a
+              unified user experience accross all chat platforms.<br>
+              Service Desk agents serve all users the same way regardless of the
+              chat App used by the end users. </p>
+          </div>
+          <div class="modal-footer"> <button type="button" class="btn btn-secondary"
+
+              data-dismiss="modal">Close</button> </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="videoPopup">
+      <div class="modal-dialog" role="document" style="width:90%;">
+        <div class="modal-content">
+          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal"
+
+              aria-label="Close"> <span aria-hidden="true">×</span> </button>
+          </div>
+          <div class="modal-body" style="width:100%;" id="videocontainer"> <video
+
+              controls="controls" preload="metadata" id="videoitem" width="720">
+              <source src="video/Teams-Remedy-integration.mp4" type="video/mp4">
+              <div style="border: 1px solid black ; padding: 8px ;"> Sorry, your
+                browser cannot play videos. Please try with another browser. </div>
+            </video> </div>
+          <div class="modal-footer"> <button type="button" class="btn btn-secondary"
+
+              data-dismiss="modal">Close</button> </div>
+        </div>
+      </div>
+    </div>
+    <!--Mainmenu-area-->
+    <div class="mainmenu-area" data-spy="affix" data-offset-top="100">
+      <div class="container">
+        <!--Logo-->
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+
+            data-toggle="collapse" data-target="#primary-menu"> <span class="icon-bar"></span>
+            <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a href="#" class="navbar-brand logo"> <img src="images/expressdesk.png"
+
+              alt="expressdesk" style="height:50px;"> </a> </div>
+        <!--Logo/-->
+        <nav class="collapse navbar-collapse" id="primary-menu">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#home-page">Home</a></li>
+            <li><a href="#service-page">Products</a></li>
+            <li><a href="#price-page">Offering</a></li>
+            <li><a href="#benefits-page">Benefits</a></li>
+            <li><a href="#feature-page">Features</a></li>
+            <!--<li><a href="#blog-page">Blog</a></li>-->
+            <li><a href="#contact-page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!--Mainmenu-area/-->
+    <!--Header-area-->
+    <header class="header-area overlay full-height relative v-center" id="home-page">
+      <div class="absolute "></div>
+      <div>
+        <!-- class="container"> -->
+        <div class="row v-center">
+          <div class=" col-md-2 header-text"> &nbsp; </div>
+          <div class="col-xs-12 col-md-5 header-text">
+            <h2>ExpressDesk2.0: Simplify IT Support</h2>
+            <p style="text-align: justify;">ExpressDesk is a complete solution
+              to use popular Chat Apps (including Microsoft Teams, Skype for
+              Business, WhatsApp, WeChat, Facebook Messenger, Slack, Viber,
+              Telegram, etc) to contact your Service Desk. <br>
+              <br>
+              ExpressDesk features Ms Teams integration with BMC Remedy.<br><br>
+              ExpressDesk boosts your service desk agent's productivity thanks
+              to its clever time-saving features and its native integration with
+              your ticketing system, including BMC Remedy, BMC SmartIT and BMC
+              Helix. </p>
+            <button type="button" class="button white" data-toggle="modal" data-target="#videoPopup"
+
+              onclick="resizeVideo()">Watch video</button> </div>
+          <div class="hidden-xs hidden-sm floatingright" style="width:41.66666666%;">
+            <div class="item fullsize" style="float: right;"> <img src="images/Teams-Remedy-Integration.png"
+
+                alt="Teams integration with Remedy"> </div>
+          </div>
+          <!-- <div class="hidden-xs hidden-sm col-md-5 text-right">
+            <div class="screen-box screen-slider">              <div class="item fullsize"> <img src="images/expressdesk-Teams-Side.png" alt=""> </div>              <div class="item"> <img src="images/screen-2.jpg" alt=""> </div>            </div>
+          </div>  --> </div>
+      </div>
+    </header>
+    <!--Header-area/-->
+    <!--Feature-area-->
+    <section class="gray-bg section-padding" id="service-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
+            <div class="page-title ">
+              <h2>PRODUCTS</h2>
+              <p>ExpressDesk is a suite of products that fit every
+                organisation's needs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="textonleft">
+            <h3>ExpressAgent: A virtual agent</h3>
+            <div class="left">
+              <p>ExpressAgent is the single point of contact (SPOC) to reach
+                your service desk using Teams or Skype for Business. </p>
+              <ul>
+                <li>Supports hybrid Teams and Skype for Business environments</li>
+                <li>Configurable Logo and display name to match your IT Support
+                  branding</li>
+                <li>Configurable Chatbot behavior via workflow</li>
+                <li>Integration with BMC Remedy, BMC SmartIT and BMC Helix</li>
+                <li>Supports 3rd parties Natural Language Processing and AI
+                  engines</li>
+                <li>Transfer to service desk agents</li>
+                <li>Supports Real-time translations</li>
+              </ul>
+            </div>
+            <div class="right"> <img src="images/expressdesk-Teams-Remedy-Integration.png">
+            </div>
+            <div class="singlelineitem"> <button type="button" class="button" data-toggle="modal"
+
+                data-target="#expressAgentDetails">Read More</button> </div>
+          </div>
+          <br>
+          <br>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="textonright">
+            <h3> Client-side integrations</h3>
+            <div class="right">
+              <p>ExpressDesk boosts productivity of service desk agents </p>
+              <ul>
+                <li>Multiple chats in parrallel</li>
+                <li>Predefined messages save typing time</li>
+                <li>Chat transcript automatically saved in ticket</li>
+                <li>Transferred files automatically saved in ticket</li>
+                <li>Field completion automations</li>
+                <li>Real-time translation with dual view</li>
+                <li>Presence of end users via Teams displayed in Incident
+                  console; start outbound chat about existing ticket in one
+                  click.</li>
+              </ul>
+            </div>
+            <div class="left">
+              <div class="screen-box screen-slider">
+                <div class="item"> <img src="images/expressdesk2-BMC-SmartIt-Integration.png"
+
+                    alt="Teams SmartIT integration"> </div>
+                <div class="item"> <img src="images/expressdesk-CleanIncidentScreen-Remedy.png"
+
+                    alt="Teams Remedy integration"> </div>
+                <div class="item"> <img src="images/expressdesk-predefiniedMessages-Remedy.png"
+
+                    alt="Teams Remedy integration - quick messages"> </div>
+                <div class="item"> <img src="images/expressdesk-file-transferred-through-Teams-automatically-saved-in-BMC-Remedy.png"
+
+                    alt="File transferred from Teams automatically saved in Remedy"> </div>
+                <div class="item"> <img src="images/expressdesk-Teams-Presence-in-BMC-Remedy-Incident-console.png"
+
+                    alt="Teams Presence displayed in BMCRemedy incident console"> </div>
+              </div>
+            </div>
+            <div class="singlelineitem"> <button type="button" class="button" data-toggle="modal"
+
+                data-target="#clientintegrationDetails">Read More</button> </div>
+          </div>
+        </div>
+        <hr> <br>
+        <div class="row">
+          <div class="textonleft">
+            <h3>ExpressReport: Manage and measure</h3>
+            <div class="left">
+              <p>ExpressReport is the supervisor interface, a reporting
+                interface and a dashboard. </p>
+              <ul>
+                <li>Configure your own charts and widgets</li>
+                <li>Follow real-time activities and Agents presence</li>
+                <li>Configure bot messages</li>
+                <li>Manage queues and memberships</li>
+                <li>Build reports and exports to Excel</li>
+                <li>Control assignments and transfers</li>
+              </ul>
+            </div>
+            <div class="right"> <img src="images/expressdesk-ExpressReport.png">
+            </div>
+            <div class="singlelineitem"> <button type="button" class="button" data-toggle="modal"
+
+                data-target="#expressReportDetails">Read More</button> </div>
+          </div>
+          <br>
+          <br>
+        </div>
+        <hr> <br>
+        <div class="row">
+          <div class="textonright">
+            <h3> Social Media Connector</h3>
+            <div class="right">
+              <p>In addition to the native integration with Ms Teams and Skype
+                for Business, activate your selection of popular Chat Apps using
+                ExpressDesk Social Apps connector:</p>
+              <ul>
+                <li>WeChat</li>
+                <li>WhatsApp</li>
+                <li>Facebook Messenger</li>
+                <li>Slack</li>
+                <li>Viber</li>
+                <li>Telegram</li>
+              </ul>
+            </div>
+            <div class="left">
+              <div class="screen-box apps-slider">
+                <div class="item"> <img src="images/Whatsapp-integration.png" alt="Whatsapp Remedy integration">
+                </div>
+                <div class="item"> <img src="images/Facebook-Messenger-Integration.png"
+
+                    alt="Facebook Messenger"> </div>
+                <div class="item"> <img src="images/WeChat-Integration.png" alt="Wechat Remedy integration">
+                </div>
+                <div class="item"> <img src="images/Slack-Integration.png" alt="Slack Remedy integration">
+                </div>
+                <div class="item"> <img src="images/Viber-Integration.png" alt="Viber Remedy integration">
+                </div>
+                <div class="item"> <img src="images/Telegram-Integration.png" alt="Telegram Remedy integration">
+                </div>
+              </div>
+            </div>
+            <div class="singlelineitem"> <button type="button" class="button" data-toggle="modal"
+
+                data-target="#socialmediaintegrationDetails">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="price-area overlay section-padding" id="price-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+            <div class="page-title">
+              <h2>Offering</h2>
+              <p>ExpressDesk Solutions SPRL offers top-notch products and
+                services designed to meet your highest expectations. </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="price-table">
+              <h3 class="text-uppercase price-title">ON-PREMISE Deployment</h3>
+              <hr>
+              <ul class="list-unstyled">
+                <li>Installation on your infrastructure<br>
+                  <span class="amount"></span></li>
+                <li><span class="amount">One-time license fee</span><strong class="amount"></strong></li>
+                <li>Per-module licensing</li>
+                <li>Unlimited users and chats</li>
+                <li><br>
+                </li>
+                <li>Yearly support and maintenance fee includes:</li>
+                <li>- Web/Email Product Support</li>
+                <li>- Access to all minor and major licensed product updates</li>
+              </ul>
+              <hr> <button type="button" class="button" onclick="askaquote()">Ask
+                a quote</button> </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="price-table active"> <span class="price-info"><span class="ti-crown"></span></span>
+              <h3 class="text-uppercase price-title">Software-as-a-service</h3>
+              <hr>
+              <ul class="list-unstyled">
+                <li><span class="amount">Highly Available Hosting on ExpressDesk
+                    dedicated Cloud<br>
+                  </span></li>
+                <li><span class="amount">Monthly fee</span><strong class="amount"><br>
+                  </strong></li>
+                <li>All Inclusive</li>
+                <li>Monthly volume limit</li>
+              </ul>
+              <p>Service includes:</p>
+              <ul>
+                <li>Premier Web/Email/Phone Support</li>
+                <li>24/7 Service Availability</li>
+                <li>Service Level Agreement</li>
+                <li>Pro-active management and service monitoring</li>
+                <li>Dedicated service delivery manager</li>
+              </ul>
+              <hr> <button type="button" class="button" onclick="askaquote()">Ask
+                a quote</button> </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="price-table">
+              <h3 class="text-uppercase price-title">Professional services</h3>
+              <hr>
+              <ul class="list-unstyled">
+                <li>Technical Project Management</li>
+                <li>Tailor-made configuration</li>
+                <li>Product customization</li>
+                <li>Integration with 3rd parties</li>
+                <li>Integration with existing systems</li>
+                <li>Solution Design</li>
+                <li>Workshops and Trainings </li>
+                <li>On-site or Off-site</li>
+                <li>Time&amp;Material based or Fixed Price</li>
+              </ul>
+              <hr> <button type="button" class="button" onclick="askaquote()">Ask
+                a quote</button> </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gray-bg section-padding" id="benefits-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
+            <div class="page-title ">
+              <h2>BENEFITS</h2>
+              <p> ExpressDesk's great design delivers great value. </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="box">
+              <div class="box-icon"> <img src="images/service-icon-1.png" alt="Teams single point of contact">
+              </div>
+              <h4>EASY TO USE</h4>
+              <p>&nbsp;ExpressDesk provides a Single Point of Contact accessible
+                through your user's favorite Chat apps. </p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="box">
+              <div class="box-icon"> <img src="images/service-icon-2.png" alt="Teams Remedy integration easily configurable">
+              </div>
+              <h4>Easily Configurable</h4>
+              <p>Adapt the behavior of our integrated Chat Bot thanks to its
+                embedded workflow engine. </p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="box">
+              <div class="box-icon"> <img src="images/service-icon-3.png" alt="Secure Teams adoption as chat channel for Remedy">
+              </div>
+              <h4>Increase Chat adoption</h4>
+              <p>Secure swift user adoption by making your Service Desk
+                accessible through your User's favorite chat app as well as your
+                corporate chat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Feature-area/-->
+    <!--
+    <section class="angle-bg sky-bg section-padding">      <div class="container">        <div class="row">          <div class="col-xs-12">
+            <div id="caption_slide" class="carousel slide caption-slider" data-ride="carousel">              <div class="carousel-inner" role="listbox">                <div class="item active row">                  <div class="v-center">
+                    <div class="col-xs-12 col-md-6">                      <div class="caption-title" data-animation="animated fadeInUp">                        <h2>Teams integration</h2>                      </div>
+                      <div class="caption-desc" data-animation="animated fadeInUp">                        <p>ExpressDesk provides a native integration between, on                          User side, Ms Teams and/or Skype for Business, and on                          Service Desk side, the ExpressDesk Chat app and BMC
+                          Remedy</p>                      </div>                      <div class="caption-button" data-animation="animated fadeInUp">                        <a href="#" class="button">Read more</a> </div>
+                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo one" data-animation="animated fadeInRight">                        <img src="images/screen-7.jpg" alt=""> </div>
+                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo two" data-animation="animated fadeInRight">                        <img src="images/screen-2.jpg" alt=""> </div>
+                    </div>                  </div>                </div>                <div class="item row">
+                  <div class="v-center">                    <div class="col-xs-12 col-md-6">                      <div class="caption-title" data-animation="animated fadeInUp">                        <h2>Choose your Weapon</h2>
+                      </div>                      <div class="caption-desc" data-animation="animated fadeInUp">                        <p>Activate your selection of popular Chat Apps using                          our optional Social Apps connector:</p>
+                        <ul>                          <li>WeChat</li>                          <li>WhatsApp</li>                          <li>Facebook Messenger</li>
+                          <li>Slack</li>                          <li>Viber</li>                          <li>Telegram</li>                        </ul>
+                        <p></p>                      </div>                      <div class="caption-button" data-animation="animated fadeInUp">                        <a href="#" class="button">Read more</a> </div>
+                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo one" data-animation="animated fadeInRight">                        <img src="images/screen-3.jpg" alt=""> </div>
+                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo two" data-animation="animated fadeInRight">                        <img src="images/screen-4.jpg" alt=""> </div>
+                    </div>                  </div>                </div>                <div class="item row">
+                  <div class="v-center">                    <div class="col-xs-12 col-md-6">                      <div class="caption-title" data-animation="animated fadeInUp">                        <h2>SAAS or On-Prem?</h2>
+                      </div>                      <div class="caption-desc" data-animation="animated fadeInUp">                        <p>ExpressDesk can be installed on Premises (on your own                          infrastructure) or we can provide you with a SAAS
+                          (Software As A Service) solution. </p>                        <p>Our SAAS offering includes highly available hosting,                          licenses, support and maintenance, installation of                          updates, monitoring and remote assistance.</p>
+                      </div>                      <div class="caption-button" data-animation="animated fadeInUp">                        <a href="#" class="button">Read more</a> </div>                    </div>
+                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo one" data-animation="animated fadeInRight">                        <img src="images/screen-1.jpg" alt=""> </div>                    </div>
+                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo two" data-animation="animated fadeInRight">                        <img src="images/screen-2.jpg" alt=""> </div>                    </div>
+                  </div>                </div>                <div class="item row">                  <div class="v-center">
+                    <div class="col-xs-12 col-md-6">                      <div class="caption-title" data-animation="animated fadeInUp">                        <h2>Awesome design</h2>                      </div>
+                      <div class="caption-desc" data-animation="animated fadeInUp">                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing                          elit, sed do eiusmod tempor incididunt ut labore et                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip                          ex ea commodo consequat. Duis aute</p>                      </div>                      <div class="caption-button" data-animation="animated fadeInUp">
+                        <a href="#" class="button">Read more</a> </div>                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo one" data-animation="animated fadeInRight">
+                        <img src="images/screen-3.jpg" alt=""> </div>                    </div>                    <div class="col-xs-6 col-md-3">                      <div class="caption-photo two" data-animation="animated fadeInRight">
+                        <img src="images/screen-4.jpg" alt=""> </div>                    </div>                  </div>                </div>
+              </div>                            <ol class="carousel-indicators caption-indector">                <li data-target="#caption_slide" data-slide-to="0" class="active">
+                  <strong>Ms Teams native support</strong>Ms Teams and Skype for                  Business integrate with BMC Remedy and SmartIT.</li>                <li data-target="#caption_slide" data-slide-to="1"> <strong>Additional                    Chat Channels </strong>Add WeChat or WhatsApp support. </li>
+                <li data-target="#caption_slide" data-slide-to="2"> <strong>SAAS                    or On-Premise? </strong>You choose. </li>                <li data-target="#caption_slide" data-slide-to="3"> <strong>Lorem                    ipsum </strong>consectetur adipisicing elit. </li>
+              </ol>            </div>          </div>        </div>
+      </div>    </section>-->
+    <section class="gray-bg section-padding" id="feature-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+            <div class="page-title">
+              <h2>FEATURES</h2>
+              <p>Discover ExpressDesk's key features. </p>
+              <p>We are constantly improving our product, contact us to get our
+                latest product features overview.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="box">
+              <div class="box-icon"> <img src="images/portfolio-icon-3.png" alt="Teams integration with BMC Remedy, BMC Helix and BMC SmartIT">
+              </div>
+              <h3>Ticketing system integration</h3>
+              <p>ExpressDesk integrates Ms Teams with BMC Helix, including
+                legacy BMC Remedy and SmartIT .</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="box">
+              <div class="box-icon"> <img src="images/portfolio-icon-2.png" alt="Hybrid intelligence - combine AI with humans">
+              </div>
+              <h3>Hybrid Intelligence</h3>
+              <p>Combine Artificial Intelligence and human interactions to
+                deliver high quality support at lower cost.</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="box">
+              <div class="box-icon"> <img src="images/portfolio-icon-4.png" alt="Automatic translation features">
+              </div>
+              <h3>Automatic Translation</h3>
+              <p>Integrate with 3rd party translation providers and enable
+                real-time, bi-directional transparent translation</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="box">
+              <div class="box-icon"> <img src="images/portfolio-icon-5.png" alt="Mobile and Tablet support">
+              </div>
+              <h3> Mobile / Tablet support </h3>
+              <p>Users can chat from their PC, Tablet or Phone using Teams,
+                Skype for Business or their favorite App</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="box">
+              <div class="box-icon"> <img src="images/portfolio-icon-1.png" alt="Teams Cards supported">
+              </div>
+              <h3>Support for Cards</h3>
+              <p>Design Cards as user friendly containers to provide rich
+                response messages.</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="box">
+              <div class="box-icon"> <img src="images/portfolio-icon-6.png" alt="Monitoring and Reporting">
+              </div>
+              <h3>Real-Time supervisor and reporting console</h3>
+              <p>Monitor on-going activities, analyse trends, build reports and
+                extract data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--
+    <section class="section-padding gray-bg" id="blog-page">      <div class="container">
+        <div class="row">          <div class="col-xs-12 col-sm-4">
+            <div class="single-blog">              <div class="blog-photo"> <img src="images/small1.jpg" alt=""> </div>
+              <div class="blog-content">                <h3><a href="#">Beautiful Place for your Great Journey</a></h3>
+                <ul class="blog-meta">                  <li><span class="ti-user"></span> <a href="#">Admin</a></li>
+                  <li><span class="ti-calendar"></span> <a href="#">Feb 01,                      2017</a></li>
+                </ul>                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Odit nemo eaque expedita aliquid dolorem repellat perferendis,                  facilis aut fugit, impedit.</p>
+              </div>            </div>
+          </div>          <div class="col-xs-12 col-sm-4">
+            <div class="single-blog">              <div class="blog-photo"> <img src="images/small2.jpg" alt=""> </div>
+              <div class="blog-content">                <h3><a href="#">Beautiful Place for your Great Journey</a></h3>
+                <ul class="blog-meta">                  <li><span class="ti-user"></span> <a href="#">Admin</a></li>
+                  <li><span class="ti-calendar"></span> <a href="#">Feb 01,                      2017</a></li>
+                </ul>                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Odit nemo eaque expedita aliquid dolorem repellat perferendis,                  facilis aut fugit, impedit.</p>
+              </div>            </div>
+          </div>          <div class="col-xs-12 col-sm-4">
+            <div class="single-blog">              <div class="blog-photo"> <img src="images/small3.jpg" alt=""> </div>
+              <div class="blog-content">                <h3><a href="#">Beautiful Place for your Great Journey</a></h3>
+                <ul class="blog-meta">                  <li><span class="ti-user"></span> <a href="#">Admin</a></li>
+                  <li><span class="ti-calendar"></span> <a href="#">Feb 01,                      2017</a></li>
+                </ul>                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Odit nemo eaque expedita aliquid dolorem repellat perferendis,                  facilis aut fugit, impedit.</p>
+              </div>            </div>
+          </div>        </div>
+      </div>    </section>
+--> <footer class="footer-area relative sky-bg" id="contact-page">
+      <div class="absolute footer-bg"></div>
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+              <div class="page-title">
+                <h2>Contact us</h2>
+                <p>Use the form below to contact us, ask for a quote or for a
+                  live demo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+              <address class="side-icon-boxes">
+                <div class="side-icon-box">
+                  <div class="side-icon"> <img src="images/location-arrow.png"
+
+                      alt=""> </div>
+                  <p><strong>Address: </strong>Winkelveldstraat 28</p>
+                  <p>B - 1700 Dilbeek</p>
+                  <p>Belgium</p>
+                </div>
+                <div class="side-icon-box">
+                  <div class="side-icon"> <img src="images/phone-arrow.png" alt="">
+                  </div>
+                  <p><strong>Telephone: </strong> <a href="callto:8801812726495">+32
+                      484 130 760</a></p>
+                </div>
+              </address>
+            </div>
+            <div class="col-xs-12 col-md-8">
+              <form action="process.php" id="contact-form" method="post" class="contact-form">
+                <div class="form-double"> <input id="form-name" name="form-name"
+
+                    placeholder="Your name" class="form-control" required="required"
+
+                    type="text"> <input id="form-email" name="form-email" class="form-control"
+
+                    placeholder="E-mail address" required="required" type="email">
+                </div>
+                <input id="form-subject" name="form-subject" class="form-control"
+
+                  placeholder="Message topic" type="text"> <textarea name="form-message"
+
+id="form-message" rows="5" class="form-control" placeholder="Your message" required="required"></textarea>
+                <div class="elem-group"> Enter the Captcha Text<br>
+                  <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><button
+
+                    class="button white refresh-captcha">Refresh Captcha</button>
+                  <br>
+                  <input id="captcha" name="form-captcha_challenge" placeholder="Enter the Captcha Text"
+
+                    pattern="[A-Z0-9]{6}" class="form-control" type="text"> </div>
+                <button type="submit" class="button">Submit</button> </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 pull-right">
+              <ul class="social-menu text-right x-left">
+                <li><a href="#"><i class="ti-twitter"></i></a><br>
+                </li>
+                <li><a href="#"><i class="ti-linkedin"></i></a><br>
+                </li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <p>Express-Desk solution SPRL is an IT software and consultancy
+                company incorporated under the laws of Belgium. <small></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <p>©Copyright 2020 Express-Desk Solution SPRL. All rights
+                reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Vendor-JS-->
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <!--Plugin-JS-->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <script src="js/scrollUp.min.js"></script>
+    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!--Main-active-JS-->
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>

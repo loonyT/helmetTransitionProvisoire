@@ -1,0 +1,2 @@
+RewriteCond %{HTTP_HOST} ^support\.express-desk\.com
+RewriteRule ^(.*)$ http://www.express-desk.com/supportdown.html [R=302]

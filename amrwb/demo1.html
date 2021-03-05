@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>AMR decode/encode tests</title>
+    <script src="amrnb.js" defer></script>
+</head>
+
+<body>
+<h2>Decode amr file and play</h2>
+<p id="sample-amr">
+    <button>Play</button> <a href="audio/test-1.amr">test-1.amr</a>
+
+
+	
+</p>
+<table>
+<tr id="sample-amr0"><td><button>Play</button></td><td><a href="audio/sample_6600.amr">sample_6600.amr</a></td></tr>
+<tr id="sample-amr1"><td><button>Play</button></td><td><a href="audio/sample_8850.amr">sample_8850.amr</a></td></tr>
+<tr id="sample-amr2"><td><button>Play</button></td><td><a href="audio/sample_12650.amr">sample_12650.amr</a></td></tr>
+<tr id="sample-amr3"><td><button>Play</button></td><td><a href="audio/sample_14250.amr">sample_14250.amr</a></td></tr>
+<tr id="sample-amr4"><td><button>Play</button></td><td><a href="audio/sample_15850.amr">sample_15850.amr</a></td></tr>
+<tr id="sample-amr5"><td><button>Play</button></td><td><a href="audio/sample_19850.amr">sample_19850.amr</a></td></tr>
+<tr id="sample-amr6"><td><button>Play</button></td><td><a href="audio/sample_23050.amr">sample_23050.amr</a></td></tr>
+<tr id="sample-amr7"><td><button>Play</button></td><td><a href="audio/sample_23850.amr">sample_23850.amr</a></td></tr>
+
+<tr id="sample-amr8"><td><button>Play</button></td><td><a href="audio/ff-16b-1c-8000hz.amr">ff-16b-1c-8000hz.amr</a></td></tr>
+<tr id="sample-amr9"><td><button>Play</button></td><td><a href="audio/gs-16b-1c-8000hz.amr">gs-16b-1c-8000hz.amr</a></td></tr>
+<tr id="sample-amr10"><td><button>Play</button></td><td><a href="audio/test.amr">test.amr</a></td></tr>
+<tr id="sample-amr11"><td><button>Play</button></td><td><a href="audio/test-1.amr">test-1.amr</a></td></tr>
+</table>
+
+
+
+<script>
+
+for (var i=0; i < 12; i++) {
+        var buttonSelector = '#sample-amr' + i + ' > td > button';
+        E(buttonSelector).onclick = function() {
+            var href = this.parentNode.parentNode.children[1].children[0].href;
+            fetchBlob(href, function(blob) {
+                playAmrBlob(blob);
+            });
+        };
+    }
+
+function getBrowserName(){
+    var ua= navigator.userAgent, tem, 
+    M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if(/trident/i.test(M[1])){
+        tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE';
+    }
+    if(M[1]=== 'Chrome'){
+        tem= ua.match(/\b(OPR|Edge)/i);
+        if(tem!= null) return tem.slice(1).join('').replace('OPR', 'Opera');
+    }
+    M= M[2]? [M[1], M[2]]: [navigator.appName, '', '-?'];
+    if((tem= '')!= null) M.splice(1, 1, tem[1]);
+    return M.join(' ');
+}
+
+
+
+function testVideoSupported(ext) 
+{
+	alert(getBrowserName());
+	var testEl = document.createElement( "video" ), mpeg4, h264, ogg, webm;
+	if ( testEl.canPlayType ) {
+    
+	if (ext == "mp4")
+	{
+		// Check for MPEG-4 support
+		mpeg4 = "" !== testEl.canPlayType( 'video/mp4; codecs="mp4v.20.8"' );
+	
+		// Check for h264 support
+		h264 = "" !== ( testEl.canPlayType( 'video/mp4; codecs="avc1.42E01E"' )
+			|| testEl.canPlayType( 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"' ) );
+		if (mpeg4 || h264)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	if (ext == "ogg")
+	{
+		// Check for Ogg support
+		ogg = "" !== testEl.canPlayType( 'video/ogg; codecs="theora"' );
+		return ogg;
+	}
+	if (ext == "webm")
+	{
+		// Check for Webm support
+		webm = "" !== testEl.canPlayType( 'video/webm; codecs="vp8, vorbis"' );
+		return webm;
+	}
+	if (ext == "mov")
+	{
+		//var result = navigator.mimeTypes['video/quicktime'];
+		//alert(result);
+	}
+	}
+}
+
+
+    function E(selector) {
+        return document.querySelector(selector);
+    }
+
+    E('#sample-amr > button').onclick = function() {
+        fetchBlob(E('#sample-amr > a').href, function(blob) {
+            playAmrBlob(blob);
+        });
+    };
+
+
+    var gAudioContext = new AudioContext();
+
+    function getAudioContext() {
+        if (!gAudioContext) {
+            gAudioContext = new AudioContext();
+        }
+        return gAudioContext;
+    }
+
+    function fetchBlob(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.responseType = 'blob';
+        xhr.onload = function() {
+            callback(this.response);
+        };
+        xhr.onerror = function() {
+            alert('Failed to fetch ' + url);
+        };
+        xhr.send();
+    }
+
+    function readBlob(blob, callback) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var data = new Uint8Array(e.target.result);
+            callback(data);
+        };
+        reader.readAsArrayBuffer(blob);
+    }
+
+    function playAmrBlob(blob, callback) {
+        readBlob(blob, function(data) {
+            playAmrArray(data);
+        });
+    }
+
+    function playAmrArray(array) {
+        var samples = AMR.decode(array);
+        if (!samples) {
+            alert('Failed to decode!');
+            return;
+        }
+        playPcm(samples);
+    }
+
+    function playPcm(samples) {
+        var ctx = getAudioContext();
+        var src = ctx.createBufferSource();
+        var buffer = ctx.createBuffer(1, samples.length, 8000);
+        if (buffer.copyToChannel) {
+            buffer.copyToChannel(samples, 0, 0)
+        } else {
+            var channelBuffer = buffer.getChannelData(0);
+            channelBuffer.set(samples);
+        }
+
+        src.buffer = buffer;
+        src.connect(ctx.destination);
+        src.start();
+    }
+
+</script>
+</body>
+</html>
